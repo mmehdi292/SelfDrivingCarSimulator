@@ -21,9 +21,33 @@ public class GoToPointController {
     private  Circle endPoint;
 
     @FXML
+    private  Circle endPoint1;
+
+    @FXML
+    private  Circle endPoint2;
+
+    public BDI agent;
+
+    @FXML
     protected void onStartButtonClick() {
-        BDI agent = new BDI(car,new Point(endPoint.getLayoutX(),endPoint.getLayoutY()));
+        agent = new BDI(car,new Point(endPoint.getLayoutX(),endPoint.getLayoutY()));
         agent.start();
+    }
+
+    @FXML
+    protected void onP1ButtonClick() {
+        agent.setDesires(new Point(endPoint.getLayoutX(),endPoint.getLayoutY()));
+    }
+
+    @FXML
+    protected void onP2ButtonClick() {
+        agent.setDesires(new Point(endPoint1.getLayoutX(),endPoint1.getLayoutY()));
+    }
+
+
+    @FXML
+    protected void onP3ButtonClick() {
+        agent.setDesires(new Point(endPoint2.getLayoutX(),endPoint2.getLayoutY()));
     }
 
 

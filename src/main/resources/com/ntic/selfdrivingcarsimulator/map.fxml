@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<AnchorPane fx:id="screen" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ntic.selfdrivingcarsimulator.gui.MapController">
+   <children>
+      <Rectangle fx:id="route1" arcHeight="5.0" arcWidth="5.0" fill="#bc7b13" height="40.0" layoutX="1.0" layoutY="139.0" stroke="BLACK" strokeType="INSIDE" width="312.0" />
+      <Rectangle fx:id="route4" arcHeight="5.0" arcWidth="5.0" fill="#bc7b13" height="40.0" layoutX="1062.0" layoutY="139.0" stroke="BLACK" strokeType="INSIDE" width="220.0" />
+      <Rectangle fx:id="route8" arcHeight="5.0" arcWidth="5.0" fill="#bc7b13" height="40.0" layoutX="1060.0" layoutY="318.0" stroke="BLACK" strokeType="INSIDE" width="220.0" />
+      <Rectangle fx:id="route12" arcHeight="5.0" arcWidth="5.0" fill="#bc7b13" height="40.0" layoutX="1059.0" layoutY="496.0" stroke="BLACK" strokeType="INSIDE" width="220.0" />
+      <Rectangle fx:id="intersection1" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="52.0" layoutX="309.0" layoutY="134.0" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+      <Rectangle fx:id="intersection2" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="52.0" layoutX="660.0" layoutY="135.0" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+      <Rectangle fx:id="intersection3" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="52.0" layoutX="1014.0" layoutY="133.0" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+      <Rectangle fx:id="intersection4" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="52.0" layoutX="307.0" layoutY="312.0" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+      <Rectangle fx:id="intersection5" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="52.0" layoutX="658.0" layoutY="313.0" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+      <Rectangle fx:id="intersection6" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="52.0" layoutX="1012.0" layoutY="311.0" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+      <Rectangle fx:id="route2" arcHeight="5.0" arcWidth="5.0" fill="#bc7b13" height="40.0" layoutX="352.0" layoutY="139.0" stroke="BLACK" strokeType="INSIDE" width="312.0" />
+      <Rectangle fx:id="route3" arcHeight="5.0" arcWidth="5.0" fill="#bc7b13" height="40.0" layoutX="702.0" layoutY="139.0" stroke="BLACK" strokeType="INSIDE" width="312.0" />
+      <Rectangle fx:id="route5" arcHeight="5.0" arcWidth="5.0" fill="#bc7b13" height="40.0" layoutX="1.0" layoutY="317.0" stroke="BLACK" strokeType="INSIDE" width="312.0" />
+      <Rectangle fx:id="route6" arcHeight="5.0" arcWidth="5.0" fill="#bc7b13" height="40.0" layoutX="352.0" layoutY="317.0" stroke="BLACK" strokeType="INSIDE" width="312.0" />
+      <Rectangle fx:id="route7" arcHeight="5.0" arcWidth="5.0" fill="#bc7b13" height="40.0" layoutX="702.0" layoutY="317.0" stroke="BLACK" strokeType="INSIDE" width="312.0" />
+      <Rectangle fx:id="route9" arcHeight="5.0" arcWidth="5.0" fill="#bc7b13" height="40.0" layoutX="2.0" layoutY="496.0" stroke="BLACK" strokeType="INSIDE" width="312.0" />
+      <Rectangle fx:id="route10" arcHeight="5.0" arcWidth="5.0" fill="#bc7b13" height="40.0" layoutX="353.0" layoutY="496.0" stroke="BLACK" strokeType="INSIDE" width="312.0" />
+      <Rectangle fx:id="route11" arcHeight="5.0" arcWidth="5.0" fill="#bc7b13" height="40.0" layoutX="703.0" layoutY="496.0" stroke="BLACK" strokeType="INSIDE" width="312.0" />
+      <Rectangle fx:id="route13" arcHeight="5.0" arcWidth="5.0" fill="#bc7b13" height="138.0" layoutX="313.0" layoutY="1.0" stroke="BLACK" strokeType="INSIDE" width="43.0" />
+      <Rectangle fx:id="route16" arcHeight="5.0" arcWidth="5.0" fill="#bc7b13" height="138.0" layoutX="312.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="43.0" />
+      <Rectangle fx:id="route19" arcHeight="5.0" arcWidth="5.0" fill="#bc7b13" height="138.0" layoutX="312.0" layoutY="359.0" stroke="BLACK" strokeType="INSIDE" width="43.0" />
+      <Rectangle fx:id="route22" arcHeight="5.0" arcWidth="5.0" fill="#bc7b13" height="89.0" layoutX="313.0" layoutY="537.0" stroke="BLACK" strokeType="INSIDE" width="43.0" />
+      <Rectangle fx:id="route14" arcHeight="5.0" arcWidth="5.0" fill="#bc7b13" height="138.0" layoutX="664.0" stroke="BLACK" strokeType="INSIDE" width="43.0" />
+      <Rectangle fx:id="route17" arcHeight="5.0" arcWidth="5.0" fill="#bc7b13" height="138.0" layoutX="663.0" layoutY="179.0" stroke="BLACK" strokeType="INSIDE" width="43.0" />
+      <Rectangle fx:id="route20" arcHeight="5.0" arcWidth="5.0" fill="#bc7b13" height="138.0" layoutX="663.0" layoutY="358.0" stroke="BLACK" strokeType="INSIDE" width="43.0" />
+      <Rectangle fx:id="route23" arcHeight="5.0" arcWidth="5.0" fill="#bc7b13" height="89.0" layoutX="664.0" layoutY="536.0" stroke="BLACK" strokeType="INSIDE" width="43.0" />
+      <Rectangle fx:id="route15" arcHeight="5.0" arcWidth="5.0" fill="#bc7b13" height="138.0" layoutX="1017.0" layoutY="1.0" stroke="BLACK" strokeType="INSIDE" width="43.0" />
+      <Rectangle fx:id="route18" arcHeight="5.0" arcWidth="5.0" fill="#bc7b13" height="138.0" layoutX="1016.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="43.0" />
+      <Rectangle fx:id="route21" arcHeight="5.0" arcWidth="5.0" fill="#bc7b13" height="138.0" layoutX="1016.0" layoutY="359.0" stroke="BLACK" strokeType="INSIDE" width="43.0" />
+      <Rectangle fx:id="route24" arcHeight="5.0" arcWidth="5.0" fill="#bc7b13" height="89.0" layoutX="1017.0" layoutY="537.0" stroke="BLACK" strokeType="INSIDE" width="43.0" />
+      <Rectangle fx:id="intersection7" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="52.0" layoutX="309.0" layoutY="493.0" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+      <Rectangle fx:id="intersection8" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="52.0" layoutX="660.0" layoutY="494.0" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+      <Rectangle fx:id="intersection9" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="52.0" layoutX="1014.0" layoutY="492.0" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+      <Rectangle fx:id="zone1" arcHeight="5.0" arcWidth="5.0" fill="#25bc70" height="139.0" stroke="BLACK" strokeType="INSIDE" width="314.0" />
+      <Rectangle fx:id="zone2" arcHeight="5.0" arcWidth="5.0" fill="#25bc70" height="139.0" layoutX="351.0" stroke="BLACK" strokeType="INSIDE" width="314.0" />
+      <Rectangle fx:id="zone3" arcHeight="5.0" arcWidth="5.0" fill="#25bc70" height="139.0" layoutX="702.0" stroke="BLACK" strokeType="INSIDE" width="314.0" />
+      <Rectangle fx:id="zone4" arcHeight="5.0" arcWidth="5.0" fill="#25bc70" height="139.0" layoutX="1058.0" stroke="BLACK" strokeType="INSIDE" width="224.0" />
+      <Rectangle fx:id="zone5" arcHeight="5.0" arcWidth="5.0" fill="#25bc70" height="139.0" layoutY="179.0" stroke="BLACK" strokeType="INSIDE" width="314.0" />
+      <Rectangle fx:id="zone6" arcHeight="5.0" arcWidth="5.0" fill="#25bc70" height="139.0" layoutX="351.0" layoutY="179.0" stroke="BLACK" strokeType="INSIDE" width="314.0" />
+      <Rectangle fx:id="zone7" arcHeight="5.0" arcWidth="5.0" fill="#25bc70" height="139.0" layoutX="702.0" layoutY="179.0" stroke="BLACK" strokeType="INSIDE" width="314.0" />
+      <Rectangle fx:id="zone8" arcHeight="5.0" arcWidth="5.0" fill="#25bc70" height="139.0" layoutX="1058.0" layoutY="179.0" stroke="BLACK" strokeType="INSIDE" width="223.0" />
+      <Rectangle fx:id="zone9" arcHeight="5.0" arcWidth="5.0" fill="#25bc70" height="139.0" layoutY="357.0" stroke="BLACK" strokeType="INSIDE" width="314.0" />
+      <Rectangle fx:id="zone10" arcHeight="5.0" arcWidth="5.0" fill="#25bc70" height="139.0" layoutX="351.0" layoutY="357.0" stroke="BLACK" strokeType="INSIDE" width="314.0" />
+      <Rectangle fx:id="zone11" arcHeight="5.0" arcWidth="5.0" fill="#25bc70" height="139.0" layoutX="702.0" layoutY="357.0" stroke="BLACK" strokeType="INSIDE" width="314.0" />
+      <Rectangle fx:id="zone12" arcHeight="5.0" arcWidth="5.0" fill="#25bc70" height="139.0" layoutX="1058.0" layoutY="357.0" stroke="BLACK" strokeType="INSIDE" width="223.0" />
+      <Rectangle fx:id="zone13" arcHeight="5.0" arcWidth="5.0" fill="#25bc70" height="89.0" layoutY="537.0" stroke="BLACK" strokeType="INSIDE" width="314.0" />
+      <Rectangle fx:id="zone14" arcHeight="5.0" arcWidth="5.0" fill="#25bc70" height="88.0" layoutX="351.0" layoutY="537.0" stroke="BLACK" strokeType="INSIDE" width="314.0" />
+      <Rectangle fx:id="zone15" arcHeight="5.0" arcWidth="5.0" fill="#25bc70" height="87.0" layoutX="702.0" layoutY="537.0" stroke="BLACK" strokeType="INSIDE" width="314.0" />
+      <Rectangle fx:id="zone16" arcHeight="5.0" arcWidth="5.0" fill="#25bc70" height="85.0" layoutX="1058.0" layoutY="537.0" stroke="BLACK" strokeType="INSIDE" width="224.0" />
+      <HBox alignment="CENTER" layoutX="-2.0" layoutY="625.0" prefHeight="94.0" prefWidth="1282.0" spacing="10.0" style="-fx-background-color: white;">
+         <children>
+            <ComboBox fx:id="placesComboBox" onAction="#loadPlace" prefHeight="42.0" prefWidth="176.0" promptText="Select Place" >
+               <items>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:value="Poste"/>
+                     <String fx:value="Commune" />
+                     <String fx:value="Stade" />
+                     <String fx:value="Hopital" />
+                     <String fx:value="Universite" />
+                     <String fx:value="Police" />
+                     <String fx:value="Marche"  />
+                     <String fx:value="Salle de sport" />
+                     <String fx:value="Pomme d'esense A"  />
+                     <String fx:value="Pomme d'esense C"  />
+                     <String fx:value="Pomme d'esense B"  />
+                     <String fx:value="Pomme d'esense D"  />
+                     <String fx:value="Masjed"  />
+                     <String fx:value="Mall"  />
+                     <String fx:value="Protiction Civil" />
+                     <String fx:value="SNTV"  />
+                     <String fx:value="Aeroport"  />
+                  </FXCollections>
+               </items>
+            </ComboBox>
+            <Button fx:id="start" alignment="CENTER" mnemonicParsing="false" onAction="#startCar" text="Start">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button fx:id="addObstacle" mnemonicParsing="false" onAction="#CreateObstacle" text="Create Obstacle">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </HBox>
+      <Circle fx:id="car" fill="#ff1f1f" layoutX="27.0" layoutY="160.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
+      <Label textFill="#1023d1" layoutX="1151.0" layoutY="110.0" text="La poste">
+         <font>
+            <Font name="Arial Bold" size="24.0" />
+         </font>
+      </Label>
+      <Circle fx:id="poste" fill="#4000ff" layoutX="1203.0" layoutY="157.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <Label textFill="#1023d1" layoutX="796.0" layoutY="109.0" text="La commune">
+         <font>
+            <Font name="Arial Bold" size="24.0" />
+         </font>
+      </Label>
+      <Circle fx:id="commune" fill="#4000ff" layoutX="870.0" layoutY="157.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <Label textFill="#1023d1" layoutX="453.0" layoutY="108.0" text="Le Stade">
+         <font>
+            <Font name="Arial Bold" size="24.0" />
+         </font>
+      </Label>
+      <Circle fx:id="stade" fill="#4000ff" layoutX="508.0" layoutY="158.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <Label textFill="#1023d1" layoutX="360.0" layoutY="54.0" text="L'Hopital">
+         <font>
+            <Font name="Arial Bold" size="24.0" />
+         </font>
+      </Label>
+      <Circle fx:id="hopital" fill="#4000ff" layoutX="334.0" layoutY="67.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <Label textFill="#1023d1" layoutX="446.0" layoutY="288.0" text="L'université">
+         <font>
+            <Font name="Arial Bold" size="24.0" />
+         </font>
+      </Label>
+      <Circle fx:id="universite" fill="#4000ff" layoutX="510.0" layoutY="336.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <Label textFill="#1023d1" layoutX="711.0" layoutY="287.0" text="La POLICE">
+         <font>
+            <Font name="Arial Bold" size="24.0" />
+         </font>
+      </Label>
+      <Circle fx:id="police" fill="#4000ff" layoutX="781.0" layoutY="337.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <Label textFill="#1023d1" layoutX="893.0" layoutY="288.0" text="le marché">
+         <font>
+            <Font name="Arial Bold" size="24.0" />
+         </font>
+      </Label>
+      <Circle fx:id="marche" fill="#4000ff" layoutX="950.0" layoutY="335.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <Label textFill="#1023d1" layoutX="118.0" layoutY="287.0" text="La salle de sport">
+         <font>
+            <Font name="Arial Bold" size="24.0" />
+         </font>
+      </Label>
+      <Circle fx:id="salleSport" fill="#4000ff" layoutX="241.0" layoutY="337.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <Label textFill="#1023d1" layoutX="81.0" layoutY="216.0" text="Pomme d'esense A">
+         <font>
+            <Font name="Arial Bold" size="24.0" />
+         </font>
+      </Label>
+      <Circle fx:id="pommeA" fill="#4000ff" layoutX="331.0" layoutY="231.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <Label textFill="#1023d1" layoutX="764.0" layoutY="465.0" text="Pomme d'esense B">
+         <font>
+            <Font name="Arial Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label textFill="#1023d1" layoutX="78.0" layoutY="577.0" text="Pomme d'esense C">
+         <font>
+            <Font name="Arial Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label textFill="#1023d1" layoutX="1059.0" layoutY="287.0" text="Pomme d'esense D">
+         <font>
+            <Font name="Arial Bold" size="24.0" />
+         </font>
+      </Label>
+      <Circle fx:id="pommeC" fill="#4000ff" layoutX="333.0" layoutY="600.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="pommeB" fill="#4000ff" layoutX="876.0" layoutY="516.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="pommeD" fill="#4000ff" layoutX="1187.0" layoutY="337.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <Label textFill="#1023d1" layoutX="467.0" layoutY="466.0" text="Masjed">
+         <font>
+            <Font name="Arial Bold" size="24.0" />
+         </font>
+      </Label>
+      <Circle fx:id="masjed" fill="#4000ff" layoutX="509.0" layoutY="516.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <Label textFill="#1023d1" layoutX="955.0" layoutY="563.0" text="Mall">
+         <font>
+            <Font name="Arial Bold" size="24.0" />
+         </font>
+      </Label>
+      <Circle fx:id="mall" fill="#4000ff" layoutX="1036.0" layoutY="573.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <Label textFill="#1023d1" layoutX="834.0" layoutY="400.0"  text="Protiction civil">
+         <font>
+            <Font name="Arial Bold" size="24.0" />
+         </font>
+      </Label>
+      <Circle fx:id="protictionCivil" fill="#4000ff" layoutX="1036.0" layoutY="412.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <Label textFill="#1023d1" layoutX="193.0" layoutY="460.0"  text="SNTV">
+         <font>
+            <Font name="Arial Bold" size="24.0" />
+         </font>
+      </Label>
+      <Circle fx:id="sntv" fill="#4000ff" layoutX="222.0" layoutY="515.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <Label textFill="#1023d1" layoutX="1138.0" layoutY="466.0" text="aéroport">
+         <font>
+            <Font name="Arial Bold" size="24.0" />
+         </font>
+      </Label>
+      <Circle fx:id="aeroport" fill="#4000ff" layoutX="1169.0" layoutY="505.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+   </children>
+</AnchorPane>

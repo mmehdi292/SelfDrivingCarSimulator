@@ -30,10 +30,10 @@ public class GoToPointController {
 
     @FXML
     protected void onStartButtonClick() {
-        agent = new BDI(car,new Point(endPoint.getLayoutX(),endPoint.getLayoutY()));
-        agent.start();
+        //agent = new BDI(car,new Point(endPoint.getLayoutX(),endPoint.getLayoutY()));
+        //agent.start();
     }
-
+/*
     @FXML
     protected void onP1ButtonClick() {
         agent.setDesires(new Point(endPoint.getLayoutX(),endPoint.getLayoutY()));
@@ -53,6 +53,6 @@ public class GoToPointController {
 
 
 
-
+*/
 
 }

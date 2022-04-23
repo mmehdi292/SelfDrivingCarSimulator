@@ -5,10 +5,14 @@ import com.ntic.selfdrivingcarsimulator.agent.BDI;
 import com.ntic.selfdrivingcarsimulator.reasoning.Point;
 import javafx.animation.AnimationTimer;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 
@@ -178,6 +182,7 @@ public class MapController {
     @FXML
     private Button start;
 
+
     @FXML
     private Circle universite;
 
@@ -231,10 +236,13 @@ public class MapController {
 
     public BDI agent;
 
+    public ArrayList<Rectangle> obstaclsList;
+
 
     @FXML
     public void initialize() {
         this.agent = new BDI(car,this);
+        this.obstaclsList = new ArrayList<>();
         //animationTimer.start();
     }
 
@@ -242,6 +250,83 @@ public class MapController {
     @FXML
     void CreateObstacle(ActionEvent event) {
 
+        addObstacle.setDisable(true);
+
+        screen.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+
+                //for display error message
+                boolean isCreated = false;
+
+                double x = event.getSceneX();
+                double y = event.getSceneY();
+
+                // this circle for make tests only
+                Circle clickedPoint = new Circle();
+                clickedPoint.setLayoutX(x);
+                clickedPoint.setLayoutY(y);
+
+                ArrayList<Rectangle> routes = routesList();
+
+                //now routes contains all routes and intersections
+                routes.addAll(intersectionsList());
+
+                for(Rectangle rectangle: routes){
+                    if(checkCollision(clickedPoint,rectangle)){
+                        Rectangle obstacle = new Rectangle();
+
+                        //first fix width and height with length of obstacle
+                        double obstacleWidth =10;
+                        double obstacleHeight = 10;
+
+
+                        if(rectangle.getId().contains("intersection")){
+                            // if is intersection cover all zone with obstacle
+                            obstacleWidth = rectangle.getWidth();
+                            obstacleHeight = rectangle.getHeight();
+                        }
+                        else{
+                            // changing width or height depending on the case
+                            if(rectangle.getWidth()>rectangle.getHeight()){
+                                obstacleHeight = rectangle.getHeight();
+                            }
+                            else{
+                                obstacleWidth = rectangle.getWidth();
+                            }
+                        }
+
+
+                        obstacle.setWidth(obstacleWidth);
+                        obstacle.setHeight(obstacleHeight);
+
+                        //for make click x and y in center [not in top right]
+                        obstacle.setX(x-(obstacle.getWidth()/2));
+                        obstacle.setY(y-(obstacle.getHeight()/2));
+
+                        obstacle.setFill(Color.KHAKI);
+
+                        // add obstacle in list of getting access to it
+                        obstaclsList.add(obstacle);
+
+                        //add obstacle to screen
+                        screen.getChildren().add(obstacle);
+
+                        // changing display error condition
+                        isCreated= true;
+                    }
+                }
+
+                //display error message
+                if(!isCreated){
+                    messageAlert("Error de position!","Clickez sur un route ou une intersection SVP!", Alert.AlertType.ERROR);
+                }
+
+                // for make one click only
+                screen.setOnMouseClicked(null);
+                addObstacle.setDisable(false);
+            }
+        });
     }
 
     @FXML
@@ -298,8 +383,15 @@ public class MapController {
         return false;
     }
 
+    public void messageAlert(String title, String content, Alert.AlertType type){
+        Alert errorAlert = new Alert(type);
+        errorAlert.setHeaderText(title);
+        errorAlert.setContentText(content);
+        errorAlert.showAndWait();
+    }
+
     public ArrayList<Rectangle> intersectionsList(){
-        ArrayList<Rectangle> intersections = new ArrayList<Rectangle>();
+        ArrayList<Rectangle> intersections = new ArrayList<>();
         intersections.add(intersection1);
         intersections.add(intersection2);
         intersections.add(intersection3);
@@ -312,6 +404,34 @@ public class MapController {
         return intersections;
     }
 
+    public ArrayList<Rectangle> routesList(){
+        ArrayList<Rectangle> routes = new ArrayList<>();
+        routes.add(route1);
+        routes.add(route2);
+        routes.add(route3);
+        routes.add(route4);
+        routes.add(route5);
+        routes.add(route6);
+        routes.add(route7);
+        routes.add(route8);
+        routes.add(route9);
+        routes.add(route10);
+        routes.add(route11);
+        routes.add(route12);
+        routes.add(route13);
+        routes.add(route14);
+        routes.add(route15);
+        routes.add(route16);
+        routes.add(route17);
+        routes.add(route18);
+        routes.add(route19);
+        routes.add(route20);
+        routes.add(route21);
+        routes.add(route22);
+        routes.add(route23);
+        routes.add(route24);
+        return routes;
+    }
     public Boolean checkIntersection(Circle circle){
         ArrayList<Rectangle> zones = intersectionsList();
         for(Rectangle zone : zones){

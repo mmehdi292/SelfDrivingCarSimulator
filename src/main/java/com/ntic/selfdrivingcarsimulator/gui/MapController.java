@@ -285,14 +285,20 @@ public class MapController {
                             // if is intersection cover all zone with obstacle
                             obstacleWidth = rectangle.getWidth();
                             obstacleHeight = rectangle.getHeight();
+                            x = rectangle.getLayoutX();
+                            y = rectangle.getLayoutY();
                         }
                         else{
                             // changing width or height depending on the case
                             if(rectangle.getWidth()>rectangle.getHeight()){
                                 obstacleHeight = rectangle.getHeight();
+                                x = x-5;
+                                y = rectangle.getLayoutY();
                             }
                             else{
                                 obstacleWidth = rectangle.getWidth();
+                                x = rectangle.getLayoutX();
+                                y = y-5;
                             }
                         }
 
@@ -301,8 +307,8 @@ public class MapController {
                         obstacle.setHeight(obstacleHeight);
 
                         //for make click x and y in center [not in top right]
-                        obstacle.setX(x-(obstacle.getWidth()/2));
-                        obstacle.setY(y-(obstacle.getHeight()/2));
+                        obstacle.setX(x);
+                        obstacle.setY(y);
 
                         obstacle.setFill(Color.KHAKI);
 

@@ -152,23 +152,23 @@
          </font>
       </Label>
       <Circle fx:id="salleSport" fill="#4000ff" layoutX="241.0" layoutY="337.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
-      <Label textFill="#1023d1" layoutX="81.0" layoutY="216.0" text="Pomme d'esense A">
+      <Label textFill="#1023d1" layoutX="81.0" layoutY="216.0" text="Pompe d'essenceA">
          <font>
             <Font name="Arial Bold" size="24.0" />
          </font>
       </Label>
       <Circle fx:id="pommeA" fill="#4000ff" layoutX="331.0" layoutY="231.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
-      <Label textFill="#1023d1" layoutX="764.0" layoutY="465.0" text="Pomme d'esense B">
+      <Label textFill="#1023d1" layoutX="764.0" layoutY="465.0" text="Pompe d'essence B">
          <font>
             <Font name="Arial Bold" size="24.0" />
          </font>
       </Label>
-      <Label textFill="#1023d1" layoutX="78.0" layoutY="577.0" text="Pomme d'esense C">
+      <Label textFill="#1023d1" layoutX="78.0" layoutY="577.0" text="Pompe d'essence C">
          <font>
             <Font name="Arial Bold" size="24.0" />
          </font>
       </Label>
-      <Label textFill="#1023d1" layoutX="1059.0" layoutY="287.0" text="Pomme d'esense D">
+      <Label textFill="#1023d1" layoutX="1059.0" layoutY="287.0" text="Pompe d'essence D">
          <font>
             <Font name="Arial Bold" size="24.0" />
          </font>
@@ -188,7 +188,7 @@
          </font>
       </Label>
       <Circle fx:id="mall" fill="#4000ff" layoutX="1036.0" layoutY="573.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
-      <Label textFill="#1023d1" layoutX="834.0" layoutY="400.0"  text="Protiction civil">
+      <Label textFill="#1023d1" layoutX="834.0" layoutY="400.0"  text="Protection civile">
          <font>
             <Font name="Arial Bold" size="24.0" />
          </font>

@@ -185,8 +185,12 @@ public class BDI extends Thread {
     }
 
     private void goToPoint(Point point){
+        Circle vcar = new Circle();
         while (physical.getLayoutX()!=point.getX() || physical.getLayoutY()!=point.getY() ){
+
         if(physical.getLayoutX()!=point.getX()) {
+            vcar.setLayoutX(this.physical.getLayoutX()+20);
+            vcar.setLayoutY(this.physical.getLayoutY());
             if(physical.getLayoutX()>point.getX()) {
                 physical.setLayoutX(physical.getLayoutX() - 1);
             }
@@ -195,6 +199,8 @@ public class BDI extends Thread {
             }
 
         }else{
+            vcar.setLayoutX(this.physical.getLayoutX());
+            vcar.setLayoutY(this.physical.getLayoutY()+20);
             if(physical.getLayoutY()!=point.getY()) {
                 if(physical.getLayoutY()>point.getY()) {
                     physical.setLayoutY(physical.getLayoutY() - 1);
@@ -204,6 +210,11 @@ public class BDI extends Thread {
                 }
             }
         }
+            //cheking obstact after 20 px
+            if(checkingObstacle(vcar)){
+                break;
+            }
+
             try {
                 this.sleep(2);
             } catch (InterruptedException e) {
@@ -295,6 +306,15 @@ public class BDI extends Thread {
         else{
             return null;
         }
+    }
+
+    private boolean checkingObstacle(Circle circle){
+        for(Rectangle obstacle : world.obstaclsList){
+            if(world.checkCollision(circle,obstacle)){
+                return true;
+            }
+        }
+        return false;
     }
 
 

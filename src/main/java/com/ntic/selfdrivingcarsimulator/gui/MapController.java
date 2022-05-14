@@ -310,7 +310,7 @@ public class MapController {
                         obstacle.setX(x);
                         obstacle.setY(y);
 
-                        obstacle.setFill(Color.KHAKI);
+                        obstacle.setFill(Color.GOLD);
 
                         // add obstacle in list of getting access to it
                         obstaclsList.add(obstacle);
@@ -339,6 +339,7 @@ public class MapController {
     void loadPlace(ActionEvent event) {
         changeCarDesire(placesComboBox.getValue().toString());
         agent.setHasNewDesires(true);
+        //agent.runAgain();
     }
 
     @FXML
@@ -354,7 +355,6 @@ public class MapController {
         }
     };*/
     public void changeCarDesire(String place){
-        System.out.println(place);
         Circle desire;
         switch(place){
             case "Poste":desire = poste; break;
@@ -442,7 +442,6 @@ public class MapController {
         ArrayList<Rectangle> zones = intersectionsList();
         for(Rectangle zone : zones){
             if(checkCollision(circle,zone)){
-                System.out.println("---"+zone.getId());
                 return true;
             }
         }
@@ -460,197 +459,3 @@ public class MapController {
     }
 
 }
-
-/*
-import com.ntic.selfdrivingcarsimulator.App;
-import com.ntic.selfdrivingcarsimulator.agent.BDI;
-import com.ntic.selfdrivingcarsimulator.reasoning.Point;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.shape.Circle;
-import javafx.scene.shape.Rectangle;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
-
-import java.io.IOException;
-
-public class MapController {
-
-    @FXML
-    private Button addObstacle;
-
-    @FXML
-    private Circle sensor;
-
-    @FXML
-    private Circle aeroport;
-
-    @FXML
-    private Circle car;
-
-    @FXML
-    private Circle commune;
-
-    @FXML
-    private Circle hopital;
-
-    @FXML
-    private Circle mall;
-
-    @FXML
-    private Circle marche;
-
-    @FXML
-    private Circle masjed;
-
-    @FXML
-    private Circle police;
-
-    @FXML
-    private Circle pommeA;
-
-    @FXML
-    private Circle pommeB;
-
-    @FXML
-    private Circle pommeC;
-
-    @FXML
-    private Circle pommeD;
-
-    @FXML
-    private Circle poste;
-
-    @FXML
-    private Circle protictionCivil;
-
-    @FXML
-    private Circle salleSport;
-
-    @FXML
-    private AnchorPane screen;
-
-    @FXML
-    private Circle sntv;
-
-    @FXML
-    private Circle stade;
-
-    @FXML
-    private Button start;
-
-    @FXML
-    private Circle universite;
-
-    @FXML
-    private Rectangle zone1;
-
-    @FXML
-    private Rectangle zone10;
-
-    @FXML
-    private Rectangle zone11;
-
-    @FXML
-    private Rectangle zone12;
-
-    @FXML
-    private Rectangle zone13;
-
-    @FXML
-    private Rectangle zone14;
-
-    @FXML
-    private Rectangle zone15;
-
-    @FXML
-    private Rectangle zone16;
-
-    @FXML
-    private Rectangle zone2;
-
-    @FXML
-    private Rectangle zone3;
-
-    @FXML
-    private Rectangle zone4;
-
-    @FXML
-    private Rectangle zone5;
-
-    @FXML
-    private Rectangle zone6;
-
-    @FXML
-    private Rectangle zone7;
-
-    @FXML
-    private Rectangle zone8;
-
-    @FXML
-    private Rectangle zone9;
-
-    @FXML
-    void CreateObstacle(ActionEvent event) {
-        System.out.println(car.getLayoutY()+"---"+car.getLayoutY());
-    }
-
-    public static BDI agent;
-
-    @FXML
-    void startCar(ActionEvent event) {
-        /*Parent root;
-        try {
-            root = FXMLLoader.load(App.class.getResource("controlPanel.fxml"));
-            Stage stage = new Stage();
-            stage.setTitle("Control panel");
-            stage.setScene(new Scene(root, 200, 155));
-            stage.initModality(Modality.APPLICATION_MODAL);
-            stage.setResizable(false);
-            stage.show();
-            agent = new BDI(car);
-            agent.setDesires(new Point(aeroport.getLayoutX(),aeroport.getLayoutY()));
-            agent.start();
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
-        agent = new BDI(car,sensor);
-        agent.setDesires(new Point(aeroport.getLayoutX(),aeroport.getLayoutY()));
-        agent.start();
-    }
-
-    public void changeCarDesire(String place){
-        Circle desire;
-        switch(place){
-            case "Poste":desire = poste; break;
-            case "Commune": desire = commune; break;
-            case "Stade": desire = stade; break;
-            case "Hopital": desire = hopital; break;
-            case "Universite": desire = universite; break;
-            case "Police": desire = police; break;
-            case "Marche": desire = marche; break;
-            case "Salle de sport": desire = salleSport; break;
-            case "Pomme d'esense A": desire = pommeA; break;
-            case "Pomme d'esense B": desire = pommeB; break;
-            case "Pomme d'esense C": desire = pommeC; break;
-            case "Pomme d'esense D": desire = pommeD; break;
-            case "Masjed": desire = masjed; break;
-            case "Mall": desire = mall; break;
-            case "Protiction Civil": desire = protictionCivil; break;
-            case "SNTV": desire = sntv; break;
-            case "Aeroport":desire = aeroport; break;
-            //for error only
-            default:desire = null;
-        }
-        Point point = new Point(desire.getLayoutX(),desire.getLayoutY());
-        agent.setDesires(point);
-    }
-
-}
-*/

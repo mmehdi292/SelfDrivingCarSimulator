@@ -1,13 +1,9 @@
 package com.ntic.selfdrivingcarsimulator.agent;
 
 import com.ntic.selfdrivingcarsimulator.gui.MapController;
+import com.ntic.selfdrivingcarsimulator.object.Feux;
 import com.ntic.selfdrivingcarsimulator.reasoning.Point;
-import com.ntic.selfdrivingcarsimulator.util.Check;
-import com.ntic.selfdrivingcarsimulator.util.Message;
-import com.ntic.selfdrivingcarsimulator.util.Movement;
-import com.ntic.selfdrivingcarsimulator.util.Plan;
-import javafx.application.Platform;
-import javafx.scene.control.Alert;
+import com.ntic.selfdrivingcarsimulator.util.*;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 
@@ -27,6 +23,8 @@ public class BDI extends Thread {
     private Point newPointOfEviteObstacle;
     private Boolean startMoveValue = true;
 
+    public LightSensor sensor;
+
     public BDI(Circle physical,MapController context){
         this.physical=physical;
         this.context=context;
@@ -34,6 +32,8 @@ public class BDI extends Thread {
         this.hasNewDesires = false;
         this.commonObstacles = new LinkedList<>();
         this.newPlanPath = new ArrayList<>();
+        this.sensor = new LightSensor(false);
+        this.sensor.start();
     }
 
     public Circle vcarInit(){
@@ -45,7 +45,7 @@ public class BDI extends Thread {
 
     }
 
-    private String observation(){
+    public String observation(){
         Circle vcar = vcarInit();
         Rectangle obstacle = Check.checkingObstacle(context,vcar);
         if(obstacle != null) {
@@ -53,25 +53,41 @@ public class BDI extends Thread {
             commonObstacles.add(obstacle);
 
             return "Obstacle";
-
         }
+
+        System.out.println("sensor.foundLight [out]"+sensor.foundLight);
+        if(!sensor.foundLight){
+            Rectangle passageLight = Check.checkingLight(context,vcar);
+            if(passageLight != null) {
+                int passageLightNumber = Integer.parseInt(Transformation.stripNonDigits(passageLight.getId()));
+                if(context.getFeuxById(passageLightNumber).getColor().equals("RED")){
+                    return "RED_LIGHT";
+                }
+                else{
+                    this.sensor.foundLight = true;
+                }
+            }
+            System.out.println("sensor.foundLight [in]"+sensor.foundLight);
+        }
+
         return "Empty";
     }
 
-    private void genererLesButs(){
+    public void genererLesButs(){
         // in pathPlan
         Plan.addPointToList(context,physical,planPath,desires);
     }
 
-    private void deliberation(String observation){
+    public void deliberation(String observation){
 
         Circle vcar = vcarInit();
         switch(observation){
             case "Obstacle":Plan.changePlan(this,vcar); break;
+            case "RED_LIGHT":Plan.waitChangingColor(context,vcar,sensor);break;
         }
     }
 
-    private void realiserLesIntentions(){
+    public void realiserLesIntentions(){
         doMove();
     }
 
@@ -104,13 +120,6 @@ public class BDI extends Thread {
 
         Movement.goToPoint(this,desires);
     }
-
-
-
-
-
-
-
 
 
 

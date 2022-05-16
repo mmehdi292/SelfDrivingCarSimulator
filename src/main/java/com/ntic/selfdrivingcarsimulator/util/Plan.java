@@ -4,6 +4,7 @@ import com.ntic.selfdrivingcarsimulator.agent.BDI;
 import com.ntic.selfdrivingcarsimulator.gui.MapController;
 import com.ntic.selfdrivingcarsimulator.reasoning.Point;
 import javafx.scene.shape.Circle;
+import javafx.scene.shape.Rectangle;
 
 import java.util.ArrayList;
 
@@ -283,5 +284,22 @@ public class Plan {
 
     }
 
+    public static void waitChangingColor(MapController context,Circle vcar,LightSensor lightSensor){
+        Boolean stoped = false;
+        Rectangle passageLight = Check.checkingLight(context,vcar);
+        if(passageLight != null) {
+            int passageLightNumber = Integer.parseInt(Transformation.stripNonDigits(passageLight.getId()));
+            while(context.getFeuxById(passageLightNumber).getColor().equals("RED")){
+                stoped = true;
+            }
+
+            if(stoped){
+                lightSensor.foundLight = true;
+            }
+
+        }
+
+
+    }
 
 }

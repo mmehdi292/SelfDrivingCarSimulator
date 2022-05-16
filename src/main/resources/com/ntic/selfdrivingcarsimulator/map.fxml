@@ -103,7 +103,7 @@
             <Insets />
          </opaqueInsets>
       </HBox>
-      <Circle fx:id="car" fill="#ff1f1f" layoutX="27.0" layoutY="160.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
+
       <Label textFill="#1023d1" layoutX="1151.0" layoutY="110.0" text="La poste">
          <font>
             <Font name="Arial Bold" size="24.0" />
@@ -206,5 +206,30 @@
          </font>
       </Label>
       <Circle fx:id="aeroport" fill="#4000ff" layoutX="1169.0" layoutY="505.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="feux1" fill="DODGERBLUE" layoutX="302.0" layoutY="189.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+      <Rectangle fx:id="passage1" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="42.0" layoutX="297.0" layoutY="138.0" stroke="BLACK" strokeType="INSIDE" width="10.0" />
+      <Circle fx:id="feux3" fill="DODGERBLUE" layoutX="362.0" layoutY="129.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+      <Rectangle fx:id="passage3" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="42.0" layoutX="355.0" layoutY="139.0" stroke="BLACK" strokeType="INSIDE" width="10.0" />
+      <Circle fx:id="feux2" fill="DODGERBLUE" layoutX="303.0" layoutY="129.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+      <Rectangle fx:id="passage2" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="10.0" layoutX="311.0" layoutY="124.0" stroke="BLACK" strokeType="INSIDE" width="43.0" />
+      <Circle fx:id="feux4" fill="DODGERBLUE" layoutX="361.0" layoutY="189.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+      <Rectangle fx:id="passage4" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="10.0" layoutX="310.0" layoutY="184.0" stroke="BLACK" strokeType="INSIDE" width="43.0" />
+      <Circle fx:id="feux8" fill="DODGERBLUE" layoutX="656.0" layoutY="369.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+      <Rectangle fx:id="passage8" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="42.0" layoutX="651.0" layoutY="318.0" stroke="BLACK" strokeType="INSIDE" width="10.0" />
+      <Circle fx:id="feux6" fill="DODGERBLUE" layoutX="716.0" layoutY="309.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+      <Rectangle fx:id="passage6" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="42.0" layoutX="709.0" layoutY="319.0" stroke="BLACK" strokeType="INSIDE" width="10.0" />
+      <Circle fx:id="feux5" fill="DODGERBLUE" layoutX="657.0" layoutY="309.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+      <Rectangle fx:id="passage5" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="10.0" layoutX="665.0" layoutY="304.0" stroke="BLACK" strokeType="INSIDE" width="43.0" />
+      <Circle fx:id="feux7" fill="DODGERBLUE" layoutX="715.0" layoutY="369.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+      <Rectangle fx:id="passage7" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="10.0" layoutX="664.0" layoutY="364.0" stroke="BLACK" strokeType="INSIDE" width="43.0" />
+      <Circle fx:id="feux12" fill="DODGERBLUE" layoutX="1008.0" layoutY="546.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+      <Rectangle fx:id="passage12" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="42.0" layoutX="1003.0" layoutY="495.0" stroke="BLACK" strokeType="INSIDE" width="10.0" />
+      <Circle fx:id="feux10" fill="DODGERBLUE" layoutX="1068.0" layoutY="486.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+      <Rectangle fx:id="passage10" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="42.0" layoutX="1061.0" layoutY="496.0" stroke="BLACK" strokeType="INSIDE" width="10.0" />
+      <Circle fx:id="feux9" fill="DODGERBLUE" layoutX="1009.0" layoutY="486.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+      <Rectangle fx:id="passage9" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="10.0" layoutX="1017.0" layoutY="481.0" stroke="BLACK" strokeType="INSIDE" width="43.0" />
+      <Circle fx:id="feux11" fill="DODGERBLUE" layoutX="1067.0" layoutY="546.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+      <Rectangle fx:id="passage11" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="10.0" layoutX="1016.0" layoutY="541.0" stroke="BLACK" strokeType="INSIDE" width="43.0" />
+      <Circle fx:id="car" fill="#ff1f1f" layoutX="27.0" layoutY="160.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
    </children>
 </AnchorPane>

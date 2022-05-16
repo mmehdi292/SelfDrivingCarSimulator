@@ -260,14 +260,16 @@ public class Movement {
 
 
             //cheking obstact after 20 px
-
+            /*
             Rectangle obstacle = Check.checkingObstacle(agent.getContext(),vcar);
             if(obstacle != null) {
                 //commonObstacles.add(obstacle);
                 Plan.changePlan(agent,vcar);
                 break;
 
-            }
+            }*/
+            String observation = agent.observation();
+            agent.deliberation(observation);
 
             try {
                 agent.sleep(2);

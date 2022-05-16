@@ -14,4 +14,14 @@ public class Check {
         }
         return null;
     }
+
+    public static Rectangle checkingLight(MapController context,Circle circle){
+
+        for(Rectangle passageLight : context.passageLightList){
+            if(context.checkCollision(circle,passageLight)){
+                return passageLight;
+            }
+        }
+        return null;
+    }
 }

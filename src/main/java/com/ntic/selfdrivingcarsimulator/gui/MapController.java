@@ -2,6 +2,8 @@ package com.ntic.selfdrivingcarsimulator.gui;
 
 
 import com.ntic.selfdrivingcarsimulator.agent.BDI;
+import com.ntic.selfdrivingcarsimulator.management.FeuxManager;
+import com.ntic.selfdrivingcarsimulator.object.Feux;
 import com.ntic.selfdrivingcarsimulator.reasoning.Point;
 import javafx.animation.AnimationTimer;
 import javafx.event.ActionEvent;
@@ -19,6 +21,78 @@ import javafx.scene.shape.Rectangle;
 import java.util.ArrayList;
 
 public class MapController {
+
+    @FXML
+    private Circle feux1;
+
+    @FXML
+    private Circle feux10;
+
+    @FXML
+    private Circle feux11;
+
+    @FXML
+    private Circle feux12;
+
+    @FXML
+    private Circle feux2;
+
+    @FXML
+    private Circle feux3;
+
+    @FXML
+    private Circle feux4;
+
+    @FXML
+    private Circle feux5;
+
+    @FXML
+    private Circle feux6;
+
+    @FXML
+    private Circle feux7;
+
+    @FXML
+    private Circle feux8;
+
+    @FXML
+    private Circle feux9;
+
+    @FXML
+    private Rectangle passage1;
+
+    @FXML
+    private Rectangle passage10;
+
+    @FXML
+    private Rectangle passage11;
+
+    @FXML
+    private Rectangle passage12;
+
+    @FXML
+    private Rectangle passage2;
+
+    @FXML
+    private Rectangle passage3;
+
+    @FXML
+    private Rectangle passage4;
+
+    @FXML
+    private Rectangle passage5;
+
+    @FXML
+    private Rectangle passage6;
+
+    @FXML
+    private Rectangle passage7;
+
+    @FXML
+    private Rectangle passage8;
+
+    @FXML
+    private Rectangle passage9;
 
     @FXML
     private Button addObstacle;
@@ -237,13 +311,20 @@ public class MapController {
     public BDI agent;
 
     public ArrayList<Rectangle> obstaclsList;
+    public ArrayList<Rectangle> passageLightList;
+    public ArrayList<Feux> listFeux;
 
 
     @FXML
     public void initialize() {
         this.agent = new BDI(car,this);
         this.obstaclsList = new ArrayList<>();
-        //animationTimer.start();
+        this.listFeux = new ArrayList<>();
+        listFeux = new ArrayList<>();
+        listFeuxInit();
+        FeuxManager feuxManager = new FeuxManager(this);
+        feuxManager.start();
+        passageLightList = passageList();
     }
 
 
@@ -438,6 +519,68 @@ public class MapController {
         routes.add(route24);
         return routes;
     }
+
+
+    public ArrayList<Circle> feuxList(){
+        ArrayList<Circle> list = new ArrayList<>();
+        list.add(feux1);
+        list.add(feux2);
+        list.add(feux3);
+        list.add(feux4);
+        list.add(feux5);
+        list.add(feux6);
+        list.add(feux7);
+        list.add(feux8);
+        list.add(feux9);
+        list.add(feux10);
+        list.add(feux11);
+        list.add(feux12);
+        return list;
+    }
+
+    public Feux getFeuxById(int id){
+        for(Feux f : listFeux){
+            if(("feux"+id).equals(f.getUIComponent().getId())){
+                return f;
+            }
+        }
+        return null;
+    }
+
+    public void listFeuxInit(){
+        listFeux.add(new Feux(feux1,"GREEN"));
+        listFeux.add(new Feux(feux2,"RED"));
+        listFeux.add(new Feux(feux3,"GREEN"));
+        listFeux.add(new Feux(feux4,"RED"));
+        listFeux.add(new Feux(feux5,"RED"));
+        listFeux.add(new Feux(feux6,"GREEN"));
+        listFeux.add(new Feux(feux7,"RED"));
+        listFeux.add(new Feux(feux8,"GREEN"));
+        listFeux.add(new Feux(feux9,"RED"));
+        listFeux.add(new Feux(feux10,"GREEN"));
+        listFeux.add(new Feux(feux11,"RED"));
+        listFeux.add(new Feux(feux12,"GREEN"));
+
+    }
+
+
+    public ArrayList<Rectangle> passageList(){
+        ArrayList<Rectangle> list = new ArrayList<>();
+        list.add(passage1);
+        list.add(passage2);
+        list.add(passage3);
+        list.add(passage4);
+        list.add(passage5);
+        list.add(passage6);
+        list.add(passage7);
+        list.add(passage8);
+        list.add(passage9);
+        list.add(passage10);
+        list.add(passage11);
+        list.add(passage12);
+        return list;
+    }
+
     public Boolean checkIntersection(Circle circle){
         ArrayList<Rectangle> zones = intersectionsList();
         for(Rectangle zone : zones){

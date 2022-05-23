@@ -63,7 +63,7 @@
       <Rectangle fx:id="zone14" arcHeight="5.0" arcWidth="5.0" fill="#25bc70" height="88.0" layoutX="351.0" layoutY="537.0" stroke="BLACK" strokeType="INSIDE" width="314.0" />
       <Rectangle fx:id="zone15" arcHeight="5.0" arcWidth="5.0" fill="#25bc70" height="87.0" layoutX="702.0" layoutY="537.0" stroke="BLACK" strokeType="INSIDE" width="314.0" />
       <Rectangle fx:id="zone16" arcHeight="5.0" arcWidth="5.0" fill="#25bc70" height="85.0" layoutX="1058.0" layoutY="537.0" stroke="BLACK" strokeType="INSIDE" width="224.0" />
-      <HBox alignment="CENTER" layoutX="-2.0" layoutY="625.0" prefHeight="94.0" prefWidth="1282.0" spacing="10.0" style="-fx-background-color: white;">
+      <HBox alignment="CENTER" layoutX="-1.0" layoutY="625.0" prefHeight="96.0" prefWidth="684.0" spacing="10.0" style="-fx-background-color: white;">
          <children>
             <ComboBox fx:id="placesComboBox" onAction="#loadPlace" prefHeight="42.0" prefWidth="176.0" promptText="Select Place" >
                <items>
@@ -251,6 +251,27 @@
       <Label layoutX="278.0" layoutY="540.0" text="Stop" />
       <Label layoutX="982.0" layoutY="294.0" text="Stop" />
       <Label layoutX="982.0" layoutY="362.0" text="Stop" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#992e43" height="102.0" layoutX="684.0" layoutY="623.0" stroke="BLACK" strokeType="INSIDE" width="599.0" />
+      <Label layoutX="796.0" layoutY="630.0" text="La vitesse:" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="796.0" layoutY="663.0" text="Réservoir d'essence:" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="speedUIValue" layoutX="882.0" layoutY="633.0" text="100" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="essenceUIValue" layoutX="956.0" layoutY="664.0" text="20000" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="16.0" />
+         </font>
+      </Label>
       <Circle fx:id="car" fill="#ff1f1f" layoutX="27.0" layoutY="160.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
    </children>
 </AnchorPane>

@@ -4,6 +4,7 @@ import com.ntic.selfdrivingcarsimulator.agent.BDI;
 import com.ntic.selfdrivingcarsimulator.gui.MapController;
 import com.ntic.selfdrivingcarsimulator.reasoning.Point;
 import com.ntic.selfdrivingcarsimulator.setting.Constants;
+import javafx.scene.control.Label;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 
@@ -185,6 +186,7 @@ public class Movement {
             if(physical.getLayoutX()>point.getX()) {
                 physical.setLayoutX(physical.getLayoutX() - 1);
                 vcar.setLayoutX(physical.getLayoutX() - Constants.VCAR_DETETION);
+
                 return "LEFT";
             }
             else {
@@ -258,6 +260,11 @@ public class Movement {
             else{
                 Movement.moveYThanX(agent.getPhysical(),vcar,point);
             }
+
+            agent.petrolTank-=1;
+            Message.UIPetrolThread(agent.getContext(),agent.petrolTank);
+            Message.UISpeedThread(agent.getContext(),agent.speed);
+
 
 
             //cheking obstact after Constants.VCAR_DETETION px

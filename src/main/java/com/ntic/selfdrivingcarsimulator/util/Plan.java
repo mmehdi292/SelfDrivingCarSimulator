@@ -307,7 +307,7 @@ public class Plan {
         Rectangle plaque = Check.checkingSpeedPlaques(agent.getContext(),vcar);
         if(plaque != null) {
             String[] plaqueValues = plaque.getId().split("_");
-            agent.setSpeed(100-Integer.parseInt(plaqueValues[1]));
+            agent.setSpeed(Integer.parseInt(plaqueValues[1]));
         }
 
 
@@ -319,11 +319,13 @@ public class Plan {
         Rectangle plaque = Check.checkingStopPlaques(agent.getContext(),vcar);
         if(plaque != null) {
             // wait 3s
+            Message.UISpeedThread(agent.getContext(), 0.0);
             try {
                 agent.wait(3000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+            Message.UISpeedThread(agent.getContext(), agent.speed);
         }
 
 

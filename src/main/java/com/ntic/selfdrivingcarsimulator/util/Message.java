@@ -14,4 +14,26 @@ public class Message {
             }
         });
     }
+
+    public static void UIPetrolThread(MapController context,int petrolTank){
+        Platform.runLater(new Runnable(){
+            @Override
+            public void run() {
+                context.setEssenceUIValue(petrolTank);
+            }
+        });
+    }
+
+    public static void UISpeedThread(MapController context,double speed){
+        Platform.runLater(new Runnable(){
+            @Override
+            public void run() {
+                if(speed==1){
+                    context.setSpeedUIValue(100);
+                }else{
+                    context.setSpeedUIValue(speed);
+                }
+            }
+        });
+    }
 }

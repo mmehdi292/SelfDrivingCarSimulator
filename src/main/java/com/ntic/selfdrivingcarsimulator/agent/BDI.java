@@ -3,6 +3,7 @@ package com.ntic.selfdrivingcarsimulator.agent;
 import com.ntic.selfdrivingcarsimulator.gui.MapController;
 import com.ntic.selfdrivingcarsimulator.object.Feux;
 import com.ntic.selfdrivingcarsimulator.reasoning.Point;
+import com.ntic.selfdrivingcarsimulator.setting.Constants;
 import com.ntic.selfdrivingcarsimulator.util.*;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
@@ -26,6 +27,7 @@ public class BDI extends Thread {
     public LightSensor sensor;
     public StopSensor stopSensor;
     public double speed;
+    public int petrolTank;
 
     public BDI(Circle physical,MapController context){
         this.physical=physical;
@@ -34,7 +36,8 @@ public class BDI extends Thread {
         this.hasNewDesires = false;
         this.commonObstacles = new LinkedList<>();
         this.newPlanPath = new ArrayList<>();
-        this.speed = 1;
+        this.speed = Constants.CAR_DEFAULT_SPEED;
+        this.petrolTank= Constants.CAR_MAX_PETROL_TANK;
         this.sensor = new LightSensor(false);
         this.stopSensor = new StopSensor(false);
         this.sensor.start();

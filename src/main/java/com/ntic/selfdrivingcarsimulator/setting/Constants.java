@@ -12,4 +12,10 @@ public class Constants{
     public static final int TIME_TO_REACTIVATE_SENSOR_OF_LIGHT_CHECKING = 700; // MS
     public static final int TIME_TO_REACTIVATE_SENSOR_OF_PLAQUE_CHECKING = 3700;// mille second
 
+
+    public static final int CAR_DEFAULT_SPEED = 1;// 100KM/S
+    public static final int CAR_MAX_PETROL_TANK = 2000;// 100KM/S
+
+
+
 }

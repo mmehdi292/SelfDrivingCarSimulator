@@ -12,6 +12,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
@@ -341,6 +342,15 @@ public class MapController {
     @FXML
     private Rectangle stop8;
 
+    @FXML
+    private Label speedUIValue;
+
+    @FXML
+    public Label essenceUIValue;
+
+
+
+
 
 
     public BDI agent;
@@ -657,4 +667,11 @@ public class MapController {
         return list;
     }
 
+    public void setSpeedUIValue(double value){
+        speedUIValue.setText(value+"");
+    }
+
+    public void setEssenceUIValue(int value){
+        essenceUIValue.setText(value+"");
+    }
 }

@@ -1,7 +1,6 @@
-package com.ntic.selfdrivingcarsimulator.util;
+package com.ntic.selfdrivingcarsimulator.service;
 
-import com.ntic.selfdrivingcarsimulator.gui.MapController;
-import com.ntic.selfdrivingcarsimulator.setting.Constants;
+import com.ntic.selfdrivingcarsimulator.controller.MapController;
 import javafx.application.Platform;
 import javafx.scene.control.Alert;
 

@@ -1,12 +1,10 @@
-package com.ntic.selfdrivingcarsimulator.util;
+package com.ntic.selfdrivingcarsimulator.service;
 
-import com.ntic.selfdrivingcarsimulator.agent.BDI;
-import com.ntic.selfdrivingcarsimulator.gui.MapController;
-import com.ntic.selfdrivingcarsimulator.reasoning.Point;
-import com.ntic.selfdrivingcarsimulator.setting.Constants;
-import javafx.scene.control.Label;
+import com.ntic.selfdrivingcarsimulator.model.BDI;
+import com.ntic.selfdrivingcarsimulator.controller.MapController;
+import com.ntic.selfdrivingcarsimulator.model.Point;
+import com.ntic.selfdrivingcarsimulator.config.Constants;
 import javafx.scene.shape.Circle;
-import javafx.scene.shape.Rectangle;
 
 public class Movement {
 

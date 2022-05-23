@@ -1,4 +1,4 @@
-package com.ntic.selfdrivingcarsimulator.reasoning;
+package com.ntic.selfdrivingcarsimulator.model;
 
 public class Point {
     private double x;

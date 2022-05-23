@@ -1,6 +1,6 @@
-package com.ntic.selfdrivingcarsimulator.util;
+package com.ntic.selfdrivingcarsimulator.service;
 
-import com.ntic.selfdrivingcarsimulator.gui.MapController;
+import com.ntic.selfdrivingcarsimulator.controller.MapController;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 
@@ -38,6 +38,17 @@ public class Check {
     public static Rectangle checkingStopPlaques(MapController context,Circle circle){
 
         for(Rectangle plaque : context.stopPlaquesList()){
+            if(context.checkCollision(circle,plaque)){
+                return plaque;
+            }
+        }
+        return null;
+    }
+
+
+    public static Rectangle checkingWalkways(MapController context,Circle circle){
+
+        for(Rectangle plaque : context.walkways()){
             if(context.checkCollision(circle,plaque)){
                 return plaque;
             }

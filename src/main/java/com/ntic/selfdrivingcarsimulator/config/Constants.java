@@ -1,4 +1,4 @@
-package com.ntic.selfdrivingcarsimulator.setting;
+package com.ntic.selfdrivingcarsimulator.config;
 
 public class Constants{
 

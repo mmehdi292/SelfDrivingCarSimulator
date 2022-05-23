@@ -12,6 +12,6 @@ module com.ntic.selfdrivingcarsimulator {
 
     opens com.ntic.selfdrivingcarsimulator to javafx.fxml;
     exports com.ntic.selfdrivingcarsimulator;
-    exports com.ntic.selfdrivingcarsimulator.gui;
-    opens com.ntic.selfdrivingcarsimulator.gui to javafx.fxml;
+    exports com.ntic.selfdrivingcarsimulator.controller;
+    opens com.ntic.selfdrivingcarsimulator.controller to javafx.fxml;
 }

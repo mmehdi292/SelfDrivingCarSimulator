@@ -1,6 +1,6 @@
-package com.ntic.selfdrivingcarsimulator.util;
+package com.ntic.selfdrivingcarsimulator.model;
 
-import com.ntic.selfdrivingcarsimulator.setting.Constants;
+import com.ntic.selfdrivingcarsimulator.config.Constants;
 
 public class LightSensor extends Thread{
     public boolean foundLight;

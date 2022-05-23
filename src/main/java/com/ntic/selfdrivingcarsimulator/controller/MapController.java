@@ -1,11 +1,12 @@
-package com.ntic.selfdrivingcarsimulator.gui;
+package com.ntic.selfdrivingcarsimulator.controller;
 
 
-import com.ntic.selfdrivingcarsimulator.agent.BDI;
-import com.ntic.selfdrivingcarsimulator.management.FeuxManager;
-import com.ntic.selfdrivingcarsimulator.object.Feux;
-import com.ntic.selfdrivingcarsimulator.reasoning.Point;
-import javafx.animation.AnimationTimer;
+import com.ntic.selfdrivingcarsimulator.model.BDI;
+import com.ntic.selfdrivingcarsimulator.service.FeuxManager;
+import com.ntic.selfdrivingcarsimulator.model.Feux;
+import com.ntic.selfdrivingcarsimulator.model.Human;
+import com.ntic.selfdrivingcarsimulator.model.Point;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -348,9 +349,26 @@ public class MapController {
     @FXML
     public Label essenceUIValue;
 
+    @FXML
+    private Rectangle walkway;
 
+    @FXML
+    private Rectangle walkway1;
 
+    @FXML
+    private Rectangle walkway2;
 
+    @FXML
+    private Rectangle walkway3;
+
+    @FXML
+    private Circle human1;
+    @FXML
+    private Circle human2;
+    @FXML
+    private Circle human3;
+    @FXML
+    private Circle human4;
 
 
     public BDI agent;
@@ -370,6 +388,39 @@ public class MapController {
         FeuxManager feuxManager = new FeuxManager(this);
         feuxManager.start();
         passageLightList = passageList();
+        Platform.runLater(new Runnable(){
+            @Override
+            public void run() {
+                Human humanThead1 = new Human(human1, agent.getContext());
+                humanThead1.start();
+            }
+        });
+        /*
+        Platform.runLater(new Runnable(){
+            @Override
+            public void run() {
+                Human humanThead2 = new Human(human2,agent.getContext());
+                humanThead2.start();
+            }
+        });
+
+        Platform.runLater(new Runnable(){
+            @Override
+            public void run() {
+                Human humanThead3 = new Human(human3,agent.getContext());
+                humanThead3.start();
+            }
+        });
+        Platform.runLater(new Runnable(){
+            @Override
+            public void run() {
+                Human humanThead4 = new Human(human4,agent.getContext());
+                humanThead4.start();
+            }
+        });*/
+
+
+
     }
 
 
@@ -683,6 +734,14 @@ public class MapController {
         list.add(pommeD);
         return  list;
 
-
     }
+    public ArrayList<Rectangle> walkways(){
+        ArrayList<Rectangle> list = new ArrayList<>();
+        list.add(walkway);
+        list.add(walkway1);
+        list.add(walkway2);
+        list.add(walkway3);
+        return list;
+    }
+
 }

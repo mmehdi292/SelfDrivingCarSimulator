@@ -1,10 +1,9 @@
-package com.ntic.selfdrivingcarsimulator.management;
+package com.ntic.selfdrivingcarsimulator.service;
 
-import com.ntic.selfdrivingcarsimulator.gui.MapController;
-import com.ntic.selfdrivingcarsimulator.object.Feux;
-import com.ntic.selfdrivingcarsimulator.setting.Constants;
+import com.ntic.selfdrivingcarsimulator.controller.MapController;
+import com.ntic.selfdrivingcarsimulator.model.Feux;
+import com.ntic.selfdrivingcarsimulator.config.Constants;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class FeuxManager extends Thread{

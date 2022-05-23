@@ -1,10 +1,8 @@
-package com.ntic.selfdrivingcarsimulator.agent;
+package com.ntic.selfdrivingcarsimulator.model;
 
-import com.ntic.selfdrivingcarsimulator.gui.MapController;
-import com.ntic.selfdrivingcarsimulator.object.Feux;
-import com.ntic.selfdrivingcarsimulator.reasoning.Point;
-import com.ntic.selfdrivingcarsimulator.setting.Constants;
-import com.ntic.selfdrivingcarsimulator.util.*;
+import com.ntic.selfdrivingcarsimulator.controller.MapController;
+import com.ntic.selfdrivingcarsimulator.config.Constants;
+import com.ntic.selfdrivingcarsimulator.service.*;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 

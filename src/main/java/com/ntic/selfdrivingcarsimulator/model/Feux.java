@@ -1,6 +1,5 @@
-package com.ntic.selfdrivingcarsimulator.object;
+package com.ntic.selfdrivingcarsimulator.model;
 
-import com.ntic.selfdrivingcarsimulator.setting.Constants;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 

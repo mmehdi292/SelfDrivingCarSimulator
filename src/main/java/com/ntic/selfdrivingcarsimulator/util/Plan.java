@@ -302,4 +302,31 @@ public class Plan {
 
     }
 
+    public static void changeSpeed(BDI agent,Circle vcar){
+
+        Rectangle plaque = Check.checkingSpeedPlaques(agent.getContext(),vcar);
+        if(plaque != null) {
+            String[] plaqueValues = plaque.getId().split("_");
+            agent.setSpeed(100-Integer.parseInt(plaqueValues[1]));
+        }
+
+
+    }
+
+
+    public static void stopAndCheckRightPlan(BDI agent,Circle vcar){
+
+        Rectangle plaque = Check.checkingStopPlaques(agent.getContext(),vcar);
+        if(plaque != null) {
+            // wait 3s
+            try {
+                agent.wait(3000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
+
+    }
+
 }

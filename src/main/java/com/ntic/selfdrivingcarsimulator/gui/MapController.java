@@ -308,6 +308,41 @@ public class MapController {
     @FXML
     private Rectangle zone9;
 
+    @FXML
+    private Rectangle plaque1_30;
+
+    @FXML
+    private Rectangle plaque2_30;
+
+    @FXML
+    private Rectangle plaque_50;
+
+    @FXML
+    private Rectangle stop1;
+
+    @FXML
+    private Rectangle stop2;
+
+    @FXML
+    private Rectangle stop3;
+
+    @FXML
+    private Rectangle stop4;
+
+    @FXML
+    private Rectangle stop5;
+
+    @FXML
+    private Rectangle stop6;
+
+    @FXML
+    private Rectangle stop7;
+
+    @FXML
+    private Rectangle stop8;
+
+
+
     public BDI agent;
 
     public ArrayList<Rectangle> obstaclsList;
@@ -599,6 +634,27 @@ public class MapController {
             }
         }
         return true;
+    }
+
+    public ArrayList<Rectangle> plaquesVitasse(){
+        ArrayList<Rectangle> list = new ArrayList<>();
+        list.add(plaque_50);
+        list.add(plaque1_30);
+        list.add(plaque2_30);
+        return list;
+    }
+
+    public ArrayList<Rectangle> stopPlaquesList(){
+        ArrayList<Rectangle> list = new ArrayList<>();
+        list.add(stop1);
+        list.add(stop2);
+        list.add(stop3);
+        list.add(stop4);
+        list.add(stop5);
+        list.add(stop6);
+        list.add(stop7);
+        list.add(stop8);
+        return list;
     }
 
 }

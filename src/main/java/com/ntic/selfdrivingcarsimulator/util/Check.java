@@ -24,4 +24,24 @@ public class Check {
         }
         return null;
     }
+
+    public static Rectangle checkingSpeedPlaques(MapController context,Circle circle){
+
+        for(Rectangle plaque : context.plaquesVitasse()){
+            if(context.checkCollision(circle,plaque)){
+                return plaque;
+            }
+        }
+        return null;
+    }
+
+    public static Rectangle checkingStopPlaques(MapController context,Circle circle){
+
+        for(Rectangle plaque : context.stopPlaquesList()){
+            if(context.checkCollision(circle,plaque)){
+                return plaque;
+            }
+        }
+        return null;
+    }
 }

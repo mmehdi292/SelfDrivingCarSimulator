@@ -3,6 +3,7 @@ package com.ntic.selfdrivingcarsimulator.util;
 import com.ntic.selfdrivingcarsimulator.agent.BDI;
 import com.ntic.selfdrivingcarsimulator.gui.MapController;
 import com.ntic.selfdrivingcarsimulator.reasoning.Point;
+import com.ntic.selfdrivingcarsimulator.setting.Constants;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 
@@ -14,7 +15,7 @@ public class Movement {
         vCar.setLayoutY(vPoint.getY());
         Boolean gotIntersection = false;
 
-        while (!gotIntersection  && vCar.getLayoutX()>0 && vCar.getLayoutY()>0 && vCar.getLayoutX()<=1280 && vCar.getLayoutY()<=720){
+        while (!gotIntersection  && vCar.getLayoutX()>0 && vCar.getLayoutY()>0 && vCar.getLayoutX()<=Constants.WEIGHT_RESOLUTION && vCar.getLayoutY()<=Constants.HEIGHT_RESOLUTION){
             if(context.checkIntersection(vCar)){
                 gotIntersection = true;
             }
@@ -22,7 +23,7 @@ public class Movement {
         }
 
         if(gotIntersection){
-            return new Point(vCar.getLayoutX()-20,vCar.getLayoutY());
+            return new Point(vCar.getLayoutX()- Constants.VCAR_DETETION,vCar.getLayoutY());
         }
         else{
             return null;
@@ -35,7 +36,7 @@ public class Movement {
         vCar.setLayoutY(vPoint.getY());
         Boolean gotIntersection = false;
 
-        while (!gotIntersection  && vCar.getLayoutX()>0 && vCar.getLayoutY()>0 && vCar.getLayoutX()<=1280 && vCar.getLayoutY()<=720){
+        while (!gotIntersection  && vCar.getLayoutX()>0 && vCar.getLayoutY()>0 && vCar.getLayoutX()<=Constants.WEIGHT_RESOLUTION && vCar.getLayoutY()<=Constants.HEIGHT_RESOLUTION){
             if(context.checkIntersection(vCar)){
                 gotIntersection = true;
             }
@@ -43,7 +44,7 @@ public class Movement {
         }
 
         if(gotIntersection){
-            return new Point(vCar.getLayoutX()+20,vCar.getLayoutY());
+            return new Point(vCar.getLayoutX()+Constants.VCAR_DETETION,vCar.getLayoutY());
         }
         else{
             return null;
@@ -55,7 +56,7 @@ public class Movement {
         vCar.setLayoutY(vPoint.getY());
         Boolean gotIntersection = false;
 
-        while (!gotIntersection  && vCar.getLayoutX()>0 && vCar.getLayoutY()>0 && vCar.getLayoutX()<=1280 && vCar.getLayoutY()<=720){
+        while (!gotIntersection  && vCar.getLayoutX()>0 && vCar.getLayoutY()>0 && vCar.getLayoutX()<=Constants.WEIGHT_RESOLUTION && vCar.getLayoutY()<=Constants.HEIGHT_RESOLUTION){
             if(context.checkIntersection(vCar)){
                 gotIntersection = true;
             }
@@ -63,7 +64,7 @@ public class Movement {
         }
 
         if(gotIntersection){
-            return new Point(vCar.getLayoutX(),vCar.getLayoutY()-20);
+            return new Point(vCar.getLayoutX(),vCar.getLayoutY()-Constants.VCAR_DETETION);
         }
         else{
             return null;
@@ -77,7 +78,7 @@ public class Movement {
         vCar.setLayoutY(vPoint.getY());
         Boolean gotIntersection = false;
 
-        while (!gotIntersection  && vCar.getLayoutX()>0 && vCar.getLayoutY()>0 && vCar.getLayoutX()<=1280 && vCar.getLayoutY()<=720){
+        while (!gotIntersection  && vCar.getLayoutX()>0 && vCar.getLayoutY()>0 && vCar.getLayoutX()<=Constants.WEIGHT_RESOLUTION && vCar.getLayoutY()<=Constants.HEIGHT_RESOLUTION){
             if(context.checkIntersection(vCar)){
                 gotIntersection = true;
             }
@@ -85,7 +86,7 @@ public class Movement {
         }
 
         if(gotIntersection){
-            return new Point(vCar.getLayoutX(),vCar.getLayoutY()+20);
+            return new Point(vCar.getLayoutX(),vCar.getLayoutY()+Constants.VCAR_DETETION);
         }
         else{
             return null;
@@ -99,7 +100,7 @@ public class Movement {
         vCar.setLayoutY(vPoint.getY());
         Boolean gotIntersection = false;
 
-        while (!gotIntersection  && vCar.getLayoutX()>0 && vCar.getLayoutY()>0 && vCar.getLayoutX()<=1280 && vCar.getLayoutY()<=720){
+        while (!gotIntersection  && vCar.getLayoutX()>0 && vCar.getLayoutY()>0 && vCar.getLayoutX()<=Constants.WEIGHT_RESOLUTION && vCar.getLayoutY()<=Constants.HEIGHT_RESOLUTION){
             if(context.checkIntersection(vCar)){
                 gotIntersection = true;
             }
@@ -107,7 +108,7 @@ public class Movement {
         }
 
         if(gotIntersection){
-            return new Point(vCar.getLayoutX()-20,vCar.getLayoutY());
+            return new Point(vCar.getLayoutX()-Constants.VCAR_DETETION,vCar.getLayoutY());
         }
         else{
             return null;
@@ -120,7 +121,7 @@ public class Movement {
         vCar.setLayoutY(vPoint.getY());
         Boolean gotIntersection = false;
 
-        while (!gotIntersection  && vCar.getLayoutX()>0 && vCar.getLayoutY()>0 && vCar.getLayoutX()<=1280 && vCar.getLayoutY()<=720){
+        while (!gotIntersection  && vCar.getLayoutX()>0 && vCar.getLayoutY()>0 && vCar.getLayoutX()<=Constants.WEIGHT_RESOLUTION && vCar.getLayoutY()<=Constants.HEIGHT_RESOLUTION){
             if(context.checkIntersection(vCar)){
                 gotIntersection = true;
             }
@@ -128,7 +129,7 @@ public class Movement {
         }
 
         if(gotIntersection){
-            return new Point(vCar.getLayoutX()+20,vCar.getLayoutY());
+            return new Point(vCar.getLayoutX()+Constants.VCAR_DETETION,vCar.getLayoutY());
         }
         else{
             return null;
@@ -140,7 +141,7 @@ public class Movement {
         vCar.setLayoutY(vPoint.getY()-addPixel);
         Boolean gotIntersection = false;
 
-        while (!gotIntersection  && vCar.getLayoutX()>0 && vCar.getLayoutY()>0 && vCar.getLayoutX()<=1280 && vCar.getLayoutY()<=720){
+        while (!gotIntersection  && vCar.getLayoutX()>0 && vCar.getLayoutY()>0 && vCar.getLayoutX()<=Constants.WEIGHT_RESOLUTION && vCar.getLayoutY()<=Constants.HEIGHT_RESOLUTION){
             if(context.checkIntersection(vCar)){
                 gotIntersection = true;
             }
@@ -148,7 +149,7 @@ public class Movement {
         }
 
         if(gotIntersection){
-            return new Point(vCar.getLayoutX(),vCar.getLayoutY()-20);
+            return new Point(vCar.getLayoutX(),vCar.getLayoutY()-Constants.VCAR_DETETION);
         }
         else{
             return null;
@@ -162,7 +163,7 @@ public class Movement {
         vCar.setLayoutY(vPoint.getY()+addPixel);
         Boolean gotIntersection = false;
 
-        while (!gotIntersection  && vCar.getLayoutX()>0 && vCar.getLayoutY()>0 && vCar.getLayoutX()<=1280 && vCar.getLayoutY()<=720){
+        while (!gotIntersection  && vCar.getLayoutX()>0 && vCar.getLayoutY()>0 && vCar.getLayoutX()<=Constants.WEIGHT_RESOLUTION && vCar.getLayoutY()<=Constants.HEIGHT_RESOLUTION){
             if(context.checkIntersection(vCar)){
                 gotIntersection = true;
             }
@@ -170,7 +171,7 @@ public class Movement {
         }
 
         if(gotIntersection){
-            return new Point(vCar.getLayoutX(),vCar.getLayoutY()+20);
+            return new Point(vCar.getLayoutX(),vCar.getLayoutY()+Constants.VCAR_DETETION);
         }
         else{
             return null;
@@ -183,12 +184,12 @@ public class Movement {
             vcar.setLayoutY(physical.getLayoutY());
             if(physical.getLayoutX()>point.getX()) {
                 physical.setLayoutX(physical.getLayoutX() - 1);
-                vcar.setLayoutX(physical.getLayoutX() - 20);
+                vcar.setLayoutX(physical.getLayoutX() - Constants.VCAR_DETETION);
                 return "LEFT";
             }
             else {
                 physical.setLayoutX(physical.getLayoutX() + 1);
-                vcar.setLayoutX(physical.getLayoutX()+20);
+                vcar.setLayoutX(physical.getLayoutX()+Constants.VCAR_DETETION);
                 return "RIGHT";
             }
 
@@ -197,12 +198,12 @@ public class Movement {
             if(physical.getLayoutY()!=point.getY()) {
                 if(physical.getLayoutY()>point.getY()) {
                     physical.setLayoutY(physical.getLayoutY() - 1);
-                    vcar.setLayoutY(physical.getLayoutY() - 20);
+                    vcar.setLayoutY(physical.getLayoutY() - Constants.VCAR_DETETION);
                     return "TOP";
                 }
                 else {
                     physical.setLayoutY(physical.getLayoutY() + 1);
-                    vcar.setLayoutY(physical.getLayoutY()+20);
+                    vcar.setLayoutY(physical.getLayoutY()+Constants.VCAR_DETETION);
                     return "BOTTOM";
                 }
             }
@@ -216,12 +217,12 @@ public class Movement {
             vcar.setLayoutX(physical.getLayoutX());
             if(physical.getLayoutY()>point.getY()) {
                 physical.setLayoutY(physical.getLayoutY() - 1);
-                vcar.setLayoutY(physical.getLayoutY() - 20);
+                vcar.setLayoutY(physical.getLayoutY() - Constants.VCAR_DETETION);
                 return "LEFT";
             }
             else {
                 physical.setLayoutY(physical.getLayoutY() + 1);
-                vcar.setLayoutY(physical.getLayoutY()+20);
+                vcar.setLayoutY(physical.getLayoutY()+Constants.VCAR_DETETION);
                 return "RIGHT";
             }
 
@@ -230,13 +231,13 @@ public class Movement {
             if(physical.getLayoutX()!=point.getX()) {
                 if(physical.getLayoutX()>point.getX()) {
                     physical.setLayoutX(physical.getLayoutX() - 1);
-                    vcar.setLayoutX(physical.getLayoutX() - 20);
+                    vcar.setLayoutX(physical.getLayoutX() - Constants.VCAR_DETETION);
                     return "TOP";
                 }
                 else {
                     physical.setLayoutX(physical.getLayoutX() + 1);
 
-                    vcar.setLayoutX(physical.getLayoutX()+20);
+                    vcar.setLayoutX(physical.getLayoutX()+Constants.VCAR_DETETION);
                     return "BOTTOM";
                 }
             }
@@ -259,7 +260,7 @@ public class Movement {
             }
 
 
-            //cheking obstact after 20 px
+            //cheking obstact after Constants.VCAR_DETETION px
             /*
             Rectangle obstacle = Check.checkingObstacle(agent.getContext(),vcar);
             if(obstacle != null) {
@@ -271,8 +272,13 @@ public class Movement {
             String observation = agent.observation();
             agent.deliberation(observation);
 
+
+
+            //default 60 ---> 2
+            // 50 ---> x    x = (50 *2)+60 /60 ==
+
             try {
-                agent.sleep(2);
+                agent.sleep((int) agent.speed*2);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

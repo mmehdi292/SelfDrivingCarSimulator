@@ -24,6 +24,8 @@ public class BDI extends Thread {
     private Boolean startMoveValue = true;
 
     public LightSensor sensor;
+    public StopSensor stopSensor;
+    public double speed;
 
     public BDI(Circle physical,MapController context){
         this.physical=physical;
@@ -32,8 +34,11 @@ public class BDI extends Thread {
         this.hasNewDesires = false;
         this.commonObstacles = new LinkedList<>();
         this.newPlanPath = new ArrayList<>();
+        this.speed = 1;
         this.sensor = new LightSensor(false);
+        this.stopSensor = new StopSensor(false);
         this.sensor.start();
+        this.stopSensor.start();
     }
 
     public Circle vcarInit(){
@@ -55,7 +60,6 @@ public class BDI extends Thread {
             return "Obstacle";
         }
 
-        System.out.println("sensor.foundLight [out]"+sensor.foundLight);
         if(!sensor.foundLight){
             Rectangle passageLight = Check.checkingLight(context,vcar);
             if(passageLight != null) {
@@ -67,7 +71,25 @@ public class BDI extends Thread {
                     this.sensor.foundLight = true;
                 }
             }
-            System.out.println("sensor.foundLight [in]"+sensor.foundLight);
+        }
+
+        Rectangle plaque = Check.checkingSpeedPlaques(context,this.getPhysical());
+        if(plaque !=null){
+            return "PLAQUE";
+        }
+        else {
+            this.speed=1;
+        }
+
+        if(!stopSensor.foundPlaque){
+            Rectangle stop = Check.checkingStopPlaques(context,this.getPhysical());
+            if(stop !=null){
+                this.stopSensor.foundPlaque = true;
+                return "STOP";
+
+            }
+
+
         }
 
         return "Empty";
@@ -84,6 +106,8 @@ public class BDI extends Thread {
         switch(observation){
             case "Obstacle":Plan.changePlan(this,vcar); break;
             case "RED_LIGHT":Plan.waitChangingColor(context,vcar,sensor);break;
+            case "PLAQUE":Plan.changeSpeed(this,vcar);break;
+            case "STOP":Plan.stopAndCheckRightPlan(this,vcar);break;
         }
     }
 
@@ -202,5 +226,13 @@ public class BDI extends Thread {
 
     public void setStartMoveValue(Boolean startMoveValue) {
         this.startMoveValue = startMoveValue;
+    }
+
+    public double getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(double speed) {
+        this.speed = speed;
     }
 }

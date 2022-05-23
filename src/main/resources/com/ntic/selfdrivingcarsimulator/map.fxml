@@ -230,6 +230,27 @@
       <Rectangle fx:id="passage9" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="10.0" layoutX="1017.0" layoutY="481.0" stroke="BLACK" strokeType="INSIDE" width="43.0" />
       <Circle fx:id="feux11" fill="DODGERBLUE" layoutX="1067.0" layoutY="546.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
       <Rectangle fx:id="passage11" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="10.0" layoutX="1016.0" layoutY="541.0" stroke="BLACK" strokeType="INSIDE" width="43.0" />
+      <Rectangle fx:id="plaque_50" arcHeight="5.0" arcWidth="5.0" fill="#b49db3" height="40.0" layoutX="362.0" layoutY="317.0" stroke="BLACK" strokeType="INSIDE" width="124.0" />
+      <Rectangle fx:id="plaque1_30" arcHeight="5.0" arcWidth="5.0" fill="#b49db3" height="40.0" layoutX="528.0" layoutY="496.0" stroke="BLACK" strokeType="INSIDE" width="124.0" />
+      <Rectangle fx:id="plaque2_30" arcHeight="5.0" arcWidth="5.0" fill="#b49db3" height="40.0" layoutX="719.0" layoutY="140.0" stroke="BLACK" strokeType="INSIDE" width="124.0" />
+      <Label layoutX="721.0" layoutY="186.0" text="30" />
+      <Label layoutX="828.0" layoutY="120.0" text="30" />
+      <Label layoutX="366.0" layoutY="365.0" text="50" />
+      <Label layoutX="467.0" layoutY="360.0" text="50" />
+      <Label layoutX="528.0" layoutY="542.0" text="30" />
+      <Label layoutX="637.0" layoutY="477.0" text="30" />
+      <Rectangle fx:id="stop1" arcHeight="5.0" arcWidth="5.0" fill="#141618" height="18.0" layoutX="1013.0" layoutY="297.0" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+      <Rectangle fx:id="stop2" arcHeight="5.0" arcWidth="5.0" fill="#14161800" height="18.0" layoutX="1012.0" layoutY="362.0" stroke="TRANSPARENT" strokeType="INSIDE" width="48.0" />
+      <Rectangle fx:id="stop3" arcHeight="5.0" arcWidth="5.0" fill="#14161800" height="40.0" layoutX="1063.0" layoutY="317.0" stroke="TRANSPARENT" strokeType="INSIDE" width="18.0" />
+      <Rectangle fx:id="stop4" arcHeight="5.0" arcWidth="5.0" fill="#141618" height="40.0" layoutX="993.0" layoutY="317.0" stroke="BLACK" strokeType="INSIDE" width="18.0" />
+      <Rectangle fx:id="stop5" arcHeight="5.0" arcWidth="5.0" fill="#141618" height="18.0" layoutX="309.0" layoutY="478.0" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+      <Rectangle fx:id="stop6" arcHeight="5.0" arcWidth="5.0" fill="#14161800" height="18.0" layoutX="308.0" layoutY="540.0" stroke="TRANSPARENT" strokeType="INSIDE" width="48.0" />
+      <Rectangle fx:id="stop7" arcHeight="5.0" arcWidth="5.0" fill="#14161800" height="40.0" layoutX="359.0" layoutY="496.0" stroke="TRANSPARENT" strokeType="INSIDE" width="18.0" />
+      <Rectangle fx:id="stop8" arcHeight="5.0" arcWidth="5.0" fill="#141618" height="40.0" layoutX="290.0" layoutY="496.0" stroke="BLACK" strokeType="INSIDE" width="18.0" />
+      <Label layoutX="278.0" layoutY="472.0" text="Stop" />
+      <Label layoutX="278.0" layoutY="540.0" text="Stop" />
+      <Label layoutX="982.0" layoutY="294.0" text="Stop" />
+      <Label layoutX="982.0" layoutY="362.0" text="Stop" />
       <Circle fx:id="car" fill="#ff1f1f" layoutX="27.0" layoutY="160.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
    </children>
 </AnchorPane>

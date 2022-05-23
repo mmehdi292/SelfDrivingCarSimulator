@@ -2,25 +2,25 @@ package com.ntic.selfdrivingcarsimulator.util;
 
 import com.ntic.selfdrivingcarsimulator.setting.Constants;
 
-public class LightSensor extends Thread{
-    public boolean foundLight;
+public class StopSensor extends Thread{
+    public boolean foundPlaque;
 
-    public LightSensor(Boolean foundLight){
-        this.foundLight=foundLight;
+    public StopSensor(Boolean foundPlaque){
+        this.foundPlaque=foundPlaque;
     }
 
     @Override
     public void run(){
         while (true){
             System.out.print("");
-            if(foundLight){
+            if(foundPlaque){
                 try {
-                    sleep(Constants.TIME_TO_REACTIVATE_SENSOR_OF_LIGHT_CHECKING);
+                    sleep(Constants.TIME_TO_REACTIVATE_SENSOR_OF_PLAQUE_CHECKING);
 
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                foundLight = false;
+                foundPlaque = false;
             }
         }
     }

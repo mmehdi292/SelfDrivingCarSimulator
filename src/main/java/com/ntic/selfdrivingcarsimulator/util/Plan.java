@@ -3,6 +3,7 @@ package com.ntic.selfdrivingcarsimulator.util;
 import com.ntic.selfdrivingcarsimulator.agent.BDI;
 import com.ntic.selfdrivingcarsimulator.gui.MapController;
 import com.ntic.selfdrivingcarsimulator.reasoning.Point;
+import com.ntic.selfdrivingcarsimulator.setting.Constants;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 
@@ -11,6 +12,9 @@ import java.util.ArrayList;
 public class Plan {
 
     public static void addPointToList(MapController context,Circle physical, ArrayList<Point> planPath,Point desires){
+
+        //clean
+        planPath.clear();
         //car point
         Point physicalPoint = new Point(physical.getLayoutX(),physical.getLayoutY());
 
@@ -327,6 +331,74 @@ public class Plan {
             }
             Message.UISpeedThread(agent.getContext(), agent.speed);
         }
+
+
+    }
+
+
+    public static void goToFuelStationPlan(BDI agent){
+        int fuelRemaining = agent.petrolTank;
+        double distanceToDisere = Math.abs(agent.getPhysical().getLayoutX()-agent.getDesires().getX())
+                +Math.abs(agent.getPhysical().getLayoutY()-agent.getDesires().getY());
+
+        if(fuelRemaining>distanceToDisere){
+            if((fuelRemaining-distanceToDisere)>(Constants.CAR_MAX_PETROL_TANK*20/100)){
+                return;
+            }
+        }
+
+        ArrayList<Circle> list = agent.getContext().feulStations();
+        for(Circle p : list){
+            double distanceBetweenCarAndStation = Math.abs(agent.getPhysical().getLayoutX()-p.getLayoutX())
+                    +Math.abs(agent.getPhysical().getLayoutY()-p.getLayoutY());
+            if(agent.getFuelStation()==null){
+                agent.setFuelStation(new Point(p.getLayoutX(),p.getLayoutY()));
+            }
+            else{
+                double distanceBetweenCarAndSavedStation = Math.abs(agent.getPhysical().getLayoutX()-agent.getFuelStation().getX())
+                        +Math.abs(agent.getPhysical().getLayoutY()-agent.getFuelStation().getY());
+                if(distanceBetweenCarAndStation<distanceBetweenCarAndSavedStation){
+                    agent.setFuelStation(new Point(p.getLayoutX(),p.getLayoutY()));
+                }
+            }
+
+        }
+        if(agent.getFuelStation()!=null){
+            agent.setDirectionToFuelStation(true);
+            Plan.addPointToList(agent.getContext(), agent.getPhysical(),agent.getPlanPath(),agent.getFuelStation());
+
+        }
+
+
+
+
+        /*
+        ArrayList<Circle> list = agent.getContext().feulStations();
+        int fuelRemaining = agent.petrolTank;
+        for(Circle p : list){
+            int distanceToStation =(int)(Math.abs(p.getLayoutX()-agent.getPhysical().getLayoutX()) + Math.abs(p.getLayoutY()-agent.getPhysical().getLayoutY()));
+            int distanceToDesire =(int)(Math.abs(agent.getDesires().getX()-agent.getPhysical().getLayoutX()) + Math.abs(agent.getDesires().getY()));
+            if(distanceToStation<distanceToDesire){
+                Point point = new Point(p.getLayoutX(),p.getLayoutY());
+                if(agent.getFuelStation()==null){
+                    agent.setFuelStation(point);
+                }
+                else {
+                    int distanceToStationSaved = (int)(Math.abs(agent.getFuelStation().getX()-agent.getPhysical().getLayoutX()) + Math.abs(agent.getFuelStation().getY()-agent.getPhysical().getLayoutY()));
+                    if(distanceToStation<distanceToStationSaved){
+                        agent.setFuelStation(point);
+                    }
+                }
+
+
+            }
+        }
+
+        if(agent.getFuelStation()!=null){
+            agent.setDirectionToFuelStation(true);
+            Plan.addPointToList(agent.getContext(), agent.getPhysical(),agent.getPlanPath(),agent.getFuelStation());
+
+        }*/
 
 
     }

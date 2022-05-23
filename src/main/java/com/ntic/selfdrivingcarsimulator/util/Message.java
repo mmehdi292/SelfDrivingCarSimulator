@@ -1,6 +1,7 @@
 package com.ntic.selfdrivingcarsimulator.util;
 
 import com.ntic.selfdrivingcarsimulator.gui.MapController;
+import com.ntic.selfdrivingcarsimulator.setting.Constants;
 import javafx.application.Platform;
 import javafx.scene.control.Alert;
 
@@ -36,4 +37,5 @@ public class Message {
             }
         });
     }
+
 }

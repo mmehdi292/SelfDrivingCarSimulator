@@ -674,4 +674,15 @@ public class MapController {
     public void setEssenceUIValue(int value){
         essenceUIValue.setText(value+"");
     }
+
+    public ArrayList<Circle> feulStations(){
+        ArrayList<Circle> list = new ArrayList<>();
+        list.add(pommeA);
+        list.add(pommeB);
+        list.add(pommeC);
+        list.add(pommeD);
+        return  list;
+
+
+    }
 }

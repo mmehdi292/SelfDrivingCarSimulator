@@ -14,7 +14,12 @@ public class Constants{
 
 
     public static final int CAR_DEFAULT_SPEED = 1;// 100KM/S
-    public static final int CAR_MAX_PETROL_TANK = 2000;// 100KM/S
+    public static final int CAR_MAX_PETROL_TANK = 4000;// 100KM/S
+
+    public static final int CAR_MIN_PETROL_TANK_TO_GO_CHARGE = CAR_MAX_PETROL_TANK *20/100;// 100KM/S
+
+    public static final int TIME_TO_ADD_ONE_UNIT_OF_FUEL =1;
+
 
 
 

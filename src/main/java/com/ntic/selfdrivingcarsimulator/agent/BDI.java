@@ -132,7 +132,7 @@ public class BDI extends Thread {
             this.setDirectionToFuelStation(false);
             while (this.petrolTank<= Constants.CAR_MAX_PETROL_TANK){
                 try {
-                    this.sleep(5);
+                    this.sleep(Constants.TIME_TO_ADD_ONE_UNIT_OF_FUEL);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

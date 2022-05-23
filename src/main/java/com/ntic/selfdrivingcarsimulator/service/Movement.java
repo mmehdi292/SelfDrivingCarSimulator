@@ -247,11 +247,9 @@ public class Movement {
 
     public static void goToPoint(BDI agent, Point point){
         Circle vcar = new Circle();
-        // this for make desion if go in x than y  or y -> x
+
         while (agent.getPhysical().getLayoutX()!=point.getX() || agent.getPhysical().getLayoutY()!=point.getY() ){
 
-            // move x than y
-            //String routing = moveXThanY(vcar,point);
             if(agent.getStartMoveValue()){
                 Movement.moveXThanY(agent.getPhysical(),vcar,point);
             }
@@ -263,24 +261,8 @@ public class Movement {
             Message.UIPetrolThread(agent.getContext(),agent.petrolTank);
             Message.UISpeedThread(agent.getContext(),agent.speed);
 
-
-
-            //cheking obstact after Constants.VCAR_DETETION px
-            /*
-            Rectangle obstacle = Check.checkingObstacle(agent.getContext(),vcar);
-            if(obstacle != null) {
-                //commonObstacles.add(obstacle);
-                Plan.changePlan(agent,vcar);
-                break;
-
-            }*/
             String observation = agent.observation();
             agent.deliberation(observation);
-
-
-
-            //default 60 ---> 2
-            // 50 ---> x    x = (50 *2)+60 /60 ==
 
             try {
                 agent.sleep((int) agent.speed*2);

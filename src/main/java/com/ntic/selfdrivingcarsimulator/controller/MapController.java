@@ -2,10 +2,11 @@ package com.ntic.selfdrivingcarsimulator.controller;
 
 
 import com.ntic.selfdrivingcarsimulator.model.BDI;
+import com.ntic.selfdrivingcarsimulator.model.Walkway;
 import com.ntic.selfdrivingcarsimulator.service.FeuxManager;
 import com.ntic.selfdrivingcarsimulator.model.Feux;
-import com.ntic.selfdrivingcarsimulator.model.Human;
 import com.ntic.selfdrivingcarsimulator.model.Point;
+import com.ntic.selfdrivingcarsimulator.service.HumanManager;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -350,25 +351,25 @@ public class MapController {
     public Label essenceUIValue;
 
     @FXML
-    private Rectangle walkway;
+    private Rectangle walkway_1;
 
     @FXML
-    private Rectangle walkway1;
+    private Rectangle walkway_2;
 
     @FXML
-    private Rectangle walkway2;
+    private Rectangle walkway_3;
 
     @FXML
-    private Rectangle walkway3;
+    private Rectangle walkway_4;
 
     @FXML
-    private Circle human1;
+    private Circle human_1;
     @FXML
-    private Circle human2;
+    private Circle human_2;
     @FXML
-    private Circle human3;
+    private Circle human_3;
     @FXML
-    private Circle human4;
+    private Circle human_4;
 
 
     public BDI agent;
@@ -376,50 +377,24 @@ public class MapController {
     public ArrayList<Rectangle> obstaclsList;
     public ArrayList<Rectangle> passageLightList;
     public ArrayList<Feux> listFeux;
+    public ArrayList<Walkway> listWalkways;
 
 
     @FXML
     public void initialize() {
         this.agent = new BDI(car,this);
         this.obstaclsList = new ArrayList<>();
-        this.listFeux = new ArrayList<>();
+        this.listWalkways = new ArrayList<>();
         listFeux = new ArrayList<>();
         listFeuxInit();
         FeuxManager feuxManager = new FeuxManager(this);
         feuxManager.start();
         passageLightList = passageList();
-        Platform.runLater(new Runnable(){
-            @Override
-            public void run() {
-                Human humanThead1 = new Human(human1, agent.getContext());
-                humanThead1.start();
-            }
-        });
-        /*
-        Platform.runLater(new Runnable(){
-            @Override
-            public void run() {
-                Human humanThead2 = new Human(human2,agent.getContext());
-                humanThead2.start();
-            }
-        });
 
-        Platform.runLater(new Runnable(){
-            @Override
-            public void run() {
-                Human humanThead3 = new Human(human3,agent.getContext());
-                humanThead3.start();
-            }
-        });
-        Platform.runLater(new Runnable(){
-            @Override
-            public void run() {
-                Human humanThead4 = new Human(human4,agent.getContext());
-                humanThead4.start();
-            }
-        });*/
+        HumanManager hm = new HumanManager(this);
+        hm.start();
 
-
+        this.walkways();
 
     }
 
@@ -735,13 +710,20 @@ public class MapController {
         return  list;
 
     }
-    public ArrayList<Rectangle> walkways(){
-        ArrayList<Rectangle> list = new ArrayList<>();
-        list.add(walkway);
-        list.add(walkway1);
-        list.add(walkway2);
-        list.add(walkway3);
+    public ArrayList<Circle> humans(){
+        ArrayList<Circle> list = new ArrayList<>();
+        list.add(human_1);
+        list.add(human_2);
+        list.add(human_3);
+        list.add(human_4);
         return list;
+    }
+
+    public void walkways(){
+        this.listWalkways.add(new Walkway(walkway_1));
+        this.listWalkways.add(new Walkway(walkway_2));
+        this.listWalkways.add(new Walkway(walkway_3));
+        this.listWalkways.add(new Walkway(walkway_4));
     }
 
 }

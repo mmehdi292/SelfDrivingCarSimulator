@@ -1,6 +1,7 @@
 package com.ntic.selfdrivingcarsimulator.service;
 
 import com.ntic.selfdrivingcarsimulator.controller.MapController;
+import com.ntic.selfdrivingcarsimulator.model.Walkway;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 
@@ -46,11 +47,11 @@ public class Check {
     }
 
 
-    public static Rectangle checkingWalkways(MapController context,Circle circle){
+    public static Walkway checkingWalkways(MapController context,Circle circle){
 
-        for(Rectangle plaque : context.walkways()){
-            if(context.checkCollision(circle,plaque)){
-                return plaque;
+        for(Walkway walkway : context.listWalkways){
+            if(context.checkCollision(circle,walkway.getWalkwayUI())){
+                return walkway;
             }
         }
         return null;

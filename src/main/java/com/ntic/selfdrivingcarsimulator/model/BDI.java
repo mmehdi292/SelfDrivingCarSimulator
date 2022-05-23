@@ -45,6 +45,7 @@ public class BDI extends Thread {
         this.stopSensor.start();
     }
 
+    //don't forget it
     public Circle vcarInit(){
 
         Circle vcar = new Circle();
@@ -97,6 +98,11 @@ public class BDI extends Thread {
             }
         }
 
+        Walkway walkway = Check.checkingWalkways(context,vcar);
+        if(walkway !=null){
+            return "WALKWAY";
+        }
+
 
 
         //must be last
@@ -120,6 +126,7 @@ public class BDI extends Thread {
             case "RED_LIGHT":Plan.waitChangingColor(context,vcar,sensor);break;
             case "PLAQUE":Plan.changeSpeed(this,vcar);break;
             case "STOP":Plan.stopAndCheckRightPlan(this,vcar);break;
+            case "WALKWAY": Plan.checkHumans(this.getContext(),vcar); break;
             case "FUEL_STATION":Plan.goToFuelStationPlan(this);break;
         }
     }

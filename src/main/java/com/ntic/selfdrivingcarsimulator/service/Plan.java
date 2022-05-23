@@ -5,6 +5,7 @@ import com.ntic.selfdrivingcarsimulator.controller.MapController;
 import com.ntic.selfdrivingcarsimulator.model.LightSensor;
 import com.ntic.selfdrivingcarsimulator.model.Point;
 import com.ntic.selfdrivingcarsimulator.config.Constants;
+import com.ntic.selfdrivingcarsimulator.model.Walkway;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 
@@ -370,38 +371,15 @@ public class Plan {
 
         }
 
+    }
 
-
-
-        /*
-        ArrayList<Circle> list = agent.getContext().feulStations();
-        int fuelRemaining = agent.petrolTank;
-        for(Circle p : list){
-            int distanceToStation =(int)(Math.abs(p.getLayoutX()-agent.getPhysical().getLayoutX()) + Math.abs(p.getLayoutY()-agent.getPhysical().getLayoutY()));
-            int distanceToDesire =(int)(Math.abs(agent.getDesires().getX()-agent.getPhysical().getLayoutX()) + Math.abs(agent.getDesires().getY()));
-            if(distanceToStation<distanceToDesire){
-                Point point = new Point(p.getLayoutX(),p.getLayoutY());
-                if(agent.getFuelStation()==null){
-                    agent.setFuelStation(point);
-                }
-                else {
-                    int distanceToStationSaved = (int)(Math.abs(agent.getFuelStation().getX()-agent.getPhysical().getLayoutX()) + Math.abs(agent.getFuelStation().getY()-agent.getPhysical().getLayoutY()));
-                    if(distanceToStation<distanceToStationSaved){
-                        agent.setFuelStation(point);
-                    }
-                }
-
-
+    public  static  void checkHumans(MapController context, Circle vcar){
+        Walkway walkway = Check.checkingWalkways(context,vcar);
+        while (walkway !=null){
+            if(!walkway.getOccupied()){
+                walkway=null;
             }
         }
-
-        if(agent.getFuelStation()!=null){
-            agent.setDirectionToFuelStation(true);
-            Plan.addPointToList(agent.getContext(), agent.getPhysical(),agent.getPlanPath(),agent.getFuelStation());
-
-        }*/
-
-
     }
 
 }

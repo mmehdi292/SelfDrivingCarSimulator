@@ -547,6 +547,13 @@ public class MapController {
         return false;
     }
 
+    public Boolean checkCollision(Circle circle,Circle circle2){
+        if(circle.getBoundsInParent().intersects(circle2.getBoundsInParent())){
+            return true;
+        }
+        return false;
+    }
+
     public void messageAlert(String title, String content, Alert.AlertType type){
         Alert errorAlert = new Alert(type);
         errorAlert.setHeaderText(title);

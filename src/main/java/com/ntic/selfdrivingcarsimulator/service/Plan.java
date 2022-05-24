@@ -384,4 +384,18 @@ public class Plan {
         }
     }
 
+    public static  void restRight(BDI agent){
+        Boolean isInCollision = false;
+        if(agent==agent.getContext().agent){
+            isInCollision = agent.getContext().checkCollision(agent.getPhysical(),agent.getContext().agentNotSelected.getPhysical());
+        }
+        else if(agent == agent.getContext().agentNotSelected){
+            isInCollision = agent.getContext().checkCollision(agent.getPhysical(),agent.getContext().agent.getPhysical());
+        }
+
+        if(isInCollision){
+            System.out.println("Hi");
+        }
+    }
+
 }

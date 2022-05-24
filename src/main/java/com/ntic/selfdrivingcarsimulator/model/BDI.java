@@ -75,26 +75,24 @@ public class BDI extends Thread {
 
         if(physical.getLayoutX()!=point.getX()) {
             vcar.setLayoutY(physical.getLayoutY());
-            if(physical.getLayoutX()>point.getX()) {
-                vcar.setLayoutX(physical.getLayoutX() - Constants.VCAR_DETETION);
+            if(physical.getLayoutX()<point.getX()) {
+                vcar.setLayoutX(physical.getLayoutX() + Constants.VCAR_DETETION);
             }
             else {
-                vcar.setLayoutX(physical.getLayoutX()+Constants.VCAR_DETETION);
+                vcar.setLayoutX(physical.getLayoutX() - Constants.VCAR_DETETION);
             }
 
         }else{
             vcar.setLayoutX(physical.getLayoutX());
             if(physical.getLayoutY()!=point.getY()) {
-                if(physical.getLayoutY()>point.getY()) {
-                    vcar.setLayoutY(physical.getLayoutY() - Constants.VCAR_DETETION);
+                if(physical.getLayoutY()<point.getY()) {
+                    vcar.setLayoutY(physical.getLayoutY() + Constants.VCAR_DETETION);
                 }
                 else {
-                    vcar.setLayoutY(physical.getLayoutY()+Constants.VCAR_DETETION);
+                    vcar.setLayoutY(physical.getLayoutY()- Constants.VCAR_DETETION);
                 }
             }
-            else {
-                vcar.setLayoutY(physical.getLayoutY());
-            }
+
         }
 
 
@@ -107,6 +105,18 @@ public class BDI extends Thread {
 
 
         Circle vcar = vcarInit();
+
+        Boolean isInCollision = false;
+        if(this==context.agent){
+            isInCollision = context.checkCollision(this.physical,context.agentNotSelected.physical);
+        }
+        else if(this == context.agentNotSelected){
+            isInCollision = context.checkCollision(this.physical,context.agent.physical);
+        }
+
+        if(isInCollision){
+            return "CAR_FOUND";
+        }
 
         Rectangle obstacle = Check.checkingObstacle(context,vcar);
         if(obstacle != null) {
@@ -168,14 +178,15 @@ public class BDI extends Thread {
 
     public void deliberation(String observation){
 
-        Circle vcar = vcarInit();
+        Circle vcar = this.physical;
         switch(observation){
             case "Obstacle":Plan.changePlan(this,vcar); break;
-            case "RED_LIGHT":Plan.waitChangingColor(context,vcar,sensor);break;
+            case "RED_LIGHT":Plan.waitChangingColor(context,vcarInit(),sensor);break;
             case "PLAQUE":Plan.changeSpeed(this,vcar);break;
             case "STOP":Plan.stopAndCheckRightPlan(this,vcar);break;
             case "WALKWAY": Plan.checkHumans(this.getContext(),vcar); break;
             case "FUEL_STATION":Plan.goToFuelStationPlan(this);break;
+            case "CAR_FOUND":Plan.restRight(this);break;
         }
     }
 

@@ -325,13 +325,15 @@ public class Plan {
         Rectangle plaque = Check.checkingStopPlaques(agent.getContext(),vcar);
         if(plaque != null) {
             // wait 3s
-            Message.UISpeedThread(agent.getContext(), 0.0);
+            if(!agent.getForGenerateDesiredAuto())
+                Message.UISpeedThread(agent.getContext(), 0.0);
             try {
                 agent.wait(3000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            Message.UISpeedThread(agent.getContext(), agent.speed);
+            if(!agent.getForGenerateDesiredAuto())
+                Message.UISpeedThread(agent.getContext(), agent.speed);
         }
 
 

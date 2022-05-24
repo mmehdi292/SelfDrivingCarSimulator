@@ -280,6 +280,7 @@
       <Circle fx:id="human_2" fill="#d61fff" layoutX="556.0" layoutY="378.0" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle fx:id="human_3" fill="#d61fff" layoutX="553.0" layoutY="195.0" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle fx:id="human_4" fill="#d61fff" layoutX="872.0" layoutY="374.0" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+       <Circle fx:id="car2" fill="#4bff1f" layoutX="1212.0" layoutY="515.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle fx:id="car" fill="#ff1f1f" layoutX="27.0" layoutY="160.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
    </children>
 </AnchorPane>

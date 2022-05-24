@@ -28,6 +28,7 @@ public class BDI extends Thread {
     public int petrolTank;
     private Boolean directionToFuelStation;
     private Point fuelStation;
+    private Boolean forGenerateDesiredAuto;
 
     public BDI(Circle physical,MapController context){
         this.physical=physical;
@@ -43,6 +44,20 @@ public class BDI extends Thread {
         this.stopSensor = new StopSensor(false);
         this.sensor.start();
         this.stopSensor.start();
+        this.forGenerateDesiredAuto=false;
+    }
+
+    //for make an agent can generate his desired automatically and randomly
+    //forGenerateDesiredAuto: for make constructor different only, this value for make no main agent can't edit in UI
+    //must be true
+    public BDI(Circle physical,MapController context,Boolean forGenerateDesiredAuto){
+        this(physical,context);
+        this.forGenerateDesiredAuto=true;
+        this.setDesires(context.randomePoint());
+        this.setHasNewDesires(true);
+        this.start();
+        DesiredChanger desiredChanger = new DesiredChanger(this,context);
+        desiredChanger.start();
     }
 
     //don't forget it
@@ -76,6 +91,9 @@ public class BDI extends Thread {
                 else {
                     vcar.setLayoutY(physical.getLayoutY()+Constants.VCAR_DETETION);
                 }
+            }
+            else {
+                vcar.setLayoutY(physical.getLayoutY());
             }
         }
 
@@ -173,7 +191,9 @@ public class BDI extends Thread {
                 }
 
                 this.petrolTank += 1;
-                Message.UIPetrolThread(getContext(),petrolTank);
+
+                if(!forGenerateDesiredAuto)
+                    Message.UIPetrolThread(getContext(),petrolTank);
             }
             Plan.addPointToList(this.getContext(), this.getPhysical(),this.getPlanPath(),this.getDesires());
             doMove();
@@ -332,5 +352,13 @@ public class BDI extends Thread {
 
     public void setFuelStation(Point fuelStation) {
         this.fuelStation = fuelStation;
+    }
+
+    public Boolean getForGenerateDesiredAuto() {
+        return forGenerateDesiredAuto;
+    }
+
+    public void setForGenerateDesiredAuto(Boolean forGenerateDesiredAuto) {
+        this.forGenerateDesiredAuto = forGenerateDesiredAuto;
     }
 }

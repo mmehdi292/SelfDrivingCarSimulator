@@ -371,8 +371,13 @@ public class MapController {
     @FXML
     private Circle human_4;
 
+    @FXML
+    private Circle car2;
+
 
     public BDI agent;
+
+    public BDI agentNotSelected;
 
     public ArrayList<Rectangle> obstaclsList;
     public ArrayList<Rectangle> passageLightList;
@@ -383,6 +388,7 @@ public class MapController {
     @FXML
     public void initialize() {
         this.agent = new BDI(car,this);
+        this.agentNotSelected = new BDI(car2,this,true);
         this.obstaclsList = new ArrayList<>();
         this.listWalkways = new ArrayList<>();
         listFeux = new ArrayList<>();
@@ -724,6 +730,36 @@ public class MapController {
         this.listWalkways.add(new Walkway(walkway_2));
         this.listWalkways.add(new Walkway(walkway_3));
         this.listWalkways.add(new Walkway(walkway_4));
+    }
+
+    public ArrayList<Circle> listPlaces(){
+        ArrayList<Circle> list = new ArrayList<>();
+        list.add(pommeA);
+        list.add(pommeB);
+        list.add(pommeC);
+        list.add(pommeD);
+        list.add(salleSport);
+        list.add(marche);
+        list.add(police);
+        list.add(universite);
+        list.add(hopital);
+        list.add(stade);
+        list.add(commune);
+        list.add(poste);
+        list.add(masjed);
+        list.add(mall);
+        list.add(protictionCivil);
+        list.add(sntv);
+        list.add(aeroport);
+        return list;
+    }
+
+    public Point randomePoint(){
+        ArrayList<Circle> list = this.listPlaces();
+        int randomNumber = (int) (Math.random() * list.size());
+        Circle randomPlace = list.get(randomNumber);
+        Point point = new Point(randomPlace.getLayoutX(),randomPlace.getLayoutY());
+        return point;
     }
 
 }

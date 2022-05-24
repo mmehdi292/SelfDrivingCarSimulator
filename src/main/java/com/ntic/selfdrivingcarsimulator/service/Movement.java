@@ -258,8 +258,10 @@ public class Movement {
             }
 
             agent.petrolTank-=1;
-            Message.UIPetrolThread(agent.getContext(),agent.petrolTank);
-            Message.UISpeedThread(agent.getContext(),agent.speed);
+            if(!agent.getForGenerateDesiredAuto()){
+                Message.UIPetrolThread(agent.getContext(),agent.petrolTank);
+                Message.UISpeedThread(agent.getContext(),agent.speed);
+            }
 
             String observation = agent.observation();
             agent.deliberation(observation);

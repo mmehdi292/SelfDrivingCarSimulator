@@ -49,8 +49,38 @@ public class BDI extends Thread {
     public Circle vcarInit(){
 
         Circle vcar = new Circle();
-        vcar.setLayoutX(physical.getLayoutX()+20);
-        vcar.setLayoutY(physical.getLayoutY()+20);
+
+        List list = Collections.synchronizedList(planPath);
+        Iterator i = list.iterator();
+        Point point = null;
+        if(i.hasNext())
+            point = (Point) i.next();
+        else
+            point = desires;
+
+        if(physical.getLayoutX()!=point.getX()) {
+            vcar.setLayoutY(physical.getLayoutY());
+            if(physical.getLayoutX()>point.getX()) {
+                vcar.setLayoutX(physical.getLayoutX() - Constants.VCAR_DETETION);
+            }
+            else {
+                vcar.setLayoutX(physical.getLayoutX()+Constants.VCAR_DETETION);
+            }
+
+        }else{
+            vcar.setLayoutX(physical.getLayoutX());
+            if(physical.getLayoutY()!=point.getY()) {
+                if(physical.getLayoutY()>point.getY()) {
+                    vcar.setLayoutY(physical.getLayoutY() - Constants.VCAR_DETETION);
+                }
+                else {
+                    vcar.setLayoutY(physical.getLayoutY()+Constants.VCAR_DETETION);
+                }
+            }
+        }
+
+
+
         return vcar;
 
     }

@@ -1,5 +1,6 @@
 package com.ntic.selfdrivingcarsimulator.service;
 
+import com.ntic.selfdrivingcarsimulator.config.Constants;
 import com.ntic.selfdrivingcarsimulator.controller.MapController;
 import com.ntic.selfdrivingcarsimulator.model.Walkway;
 import javafx.application.Platform;
@@ -34,12 +35,12 @@ public class HumanManager  extends Thread {
             Circle vHuman = new Circle();
 
             if(isUp){
-                physique.setLayoutY(physique.getLayoutY()-1);
-                vHuman.setLayoutY(physique.getLayoutY()-20);
+                Transformation.updateScreenInY(physique,-1);
+                Transformation.updateScreenInY(vHuman,-Constants.VCAR_DETETION);
             }
             else{
-                physique.setLayoutY(physique.getLayoutY()+1);
-                vHuman.setLayoutY(physique.getLayoutY()+20);
+                Transformation.updateScreenInY(physique,1);
+                Transformation.updateScreenInY(vHuman,Constants.VCAR_DETETION);
             }
 
             String[] humanIds =   physique.getId().split("_");

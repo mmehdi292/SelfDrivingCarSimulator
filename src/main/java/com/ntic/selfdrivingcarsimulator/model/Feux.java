@@ -1,5 +1,6 @@
 package com.ntic.selfdrivingcarsimulator.model;
 
+import com.ntic.selfdrivingcarsimulator.service.Transformation;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 
@@ -19,10 +20,7 @@ public class Feux{
 
 
     public void changeColor(){
-        if(this.color.equals("GREEN"))
-            this.UIComponent.setFill(Color.GREEN);
-        else
-            this.UIComponent.setFill(Color.RED);
+        Transformation.updateUIsetColor(this.UIComponent,this.color);
     }
 
     public Circle getUIComponent() {

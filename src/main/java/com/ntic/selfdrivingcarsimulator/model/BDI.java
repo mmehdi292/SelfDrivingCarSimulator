@@ -61,7 +61,7 @@ public class BDI extends Thread {
     }
 
     //don't forget it
-    public Circle vcarInit(){
+    public synchronized Circle vcarInit(){
 
         Circle vcar = new Circle();
 

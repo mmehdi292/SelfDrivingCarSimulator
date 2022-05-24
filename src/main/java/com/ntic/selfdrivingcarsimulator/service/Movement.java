@@ -51,6 +51,10 @@ public class Movement {
     }
     public static Point doMoveInYTop(MapController context,Point vPoint){
         Circle vCar = new Circle();
+
+
+        //Transformation.updateScreenInX(vCar,0);
+        //Transformation.updateScreenInY(vCar,0);
         vCar.setLayoutX(vPoint.getX());
         vCar.setLayoutY(vPoint.getY());
         Boolean gotIntersection = false;
@@ -182,14 +186,14 @@ public class Movement {
         if(physical.getLayoutX()!=point.getX()) {
             vcar.setLayoutY(physical.getLayoutY());
             if(physical.getLayoutX()>point.getX()) {
-                physical.setLayoutX(physical.getLayoutX() - 1);
-                vcar.setLayoutX(physical.getLayoutX() - Constants.VCAR_DETETION);
+                Transformation.updateScreenInX(physical,-1);
+                Transformation.updateScreenInX(vcar,-Constants.VCAR_DETETION);
 
                 return "LEFT";
             }
             else {
-                physical.setLayoutX(physical.getLayoutX() + 1);
-                vcar.setLayoutX(physical.getLayoutX()+Constants.VCAR_DETETION);
+                Transformation.updateScreenInX(physical,1);
+                Transformation.updateScreenInX(vcar,Constants.VCAR_DETETION);
                 return "RIGHT";
             }
 
@@ -197,13 +201,13 @@ public class Movement {
             vcar.setLayoutX(physical.getLayoutX());
             if(physical.getLayoutY()!=point.getY()) {
                 if(physical.getLayoutY()>point.getY()) {
-                    physical.setLayoutY(physical.getLayoutY() - 1);
-                    vcar.setLayoutY(physical.getLayoutY() - Constants.VCAR_DETETION);
+                    Transformation.updateScreenInY(physical,-1);
+                    Transformation.updateScreenInY(vcar,-Constants.VCAR_DETETION);
                     return "TOP";
                 }
                 else {
-                    physical.setLayoutY(physical.getLayoutY() + 1);
-                    vcar.setLayoutY(physical.getLayoutY()+Constants.VCAR_DETETION);
+                    Transformation.updateScreenInY(physical,1);
+                    Transformation.updateScreenInY(vcar,Constants.VCAR_DETETION);
                     return "BOTTOM";
                 }
             }
@@ -216,13 +220,13 @@ public class Movement {
         if(physical.getLayoutY()!=point.getY()) {
             vcar.setLayoutX(physical.getLayoutX());
             if(physical.getLayoutY()>point.getY()) {
-                physical.setLayoutY(physical.getLayoutY() - 1);
-                vcar.setLayoutY(physical.getLayoutY() - Constants.VCAR_DETETION);
+                Transformation.updateScreenInY(physical,-1);
+                Transformation.updateScreenInY(vcar,-Constants.VCAR_DETETION);
                 return "LEFT";
             }
             else {
-                physical.setLayoutY(physical.getLayoutY() + 1);
-                vcar.setLayoutY(physical.getLayoutY()+Constants.VCAR_DETETION);
+                Transformation.updateScreenInY(physical,1);
+                Transformation.updateScreenInY(vcar,Constants.VCAR_DETETION);
                 return "RIGHT";
             }
 
@@ -230,14 +234,13 @@ public class Movement {
             vcar.setLayoutY(physical.getLayoutY());
             if(physical.getLayoutX()!=point.getX()) {
                 if(physical.getLayoutX()>point.getX()) {
-                    physical.setLayoutX(physical.getLayoutX() - 1);
-                    vcar.setLayoutX(physical.getLayoutX() - Constants.VCAR_DETETION);
+                    Transformation.updateScreenInX(physical,-1);
+                    Transformation.updateScreenInX(vcar,-Constants.VCAR_DETETION);
                     return "TOP";
                 }
                 else {
-                    physical.setLayoutX(physical.getLayoutX() + 1);
-
-                    vcar.setLayoutX(physical.getLayoutX()+Constants.VCAR_DETETION);
+                    Transformation.updateScreenInX(physical,1);
+                    Transformation.updateScreenInX(vcar,Constants.VCAR_DETETION);
                     return "BOTTOM";
                 }
             }

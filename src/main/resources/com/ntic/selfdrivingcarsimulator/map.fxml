@@ -140,12 +140,12 @@
          </font>
       </Label>
       <Circle fx:id="police" fill="#4000ff" layoutX="781.0" layoutY="337.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
-      <Label layoutX="893.0" layoutY="288.0" text="le marché" textFill="#1023d1">
+      <Label layoutX="542.0" layoutY="417.0" text="le marché" textFill="#1023d1">
          <font>
             <Font name="Arial Bold" size="24.0" />
          </font>
       </Label>
-      <Circle fx:id="marche" fill="#4000ff" layoutX="950.0" layoutY="335.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="marche" fill="#4000ff" layoutX="683.0" layoutY="431.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
       <Label layoutX="118.0" layoutY="287.0" text="La salle de sport" textFill="#1023d1">
          <font>
             <Font name="Arial Bold" size="24.0" />
@@ -237,8 +237,8 @@
       <Label layoutX="828.0" layoutY="120.0" text="30" />
       <Label layoutX="366.0" layoutY="365.0" text="50" />
       <Label layoutX="467.0" layoutY="360.0" text="50" />
-      <Label layoutX="528.0" layoutY="542.0" text="30" />
-      <Label layoutX="637.0" layoutY="477.0" text="30" />
+      <Label layoutX="1000.0" layoutY="264.0" text="30" />
+      <Label layoutX="1062.0" layoutY="201.0" text="30" />
       <Rectangle fx:id="stop1" arcHeight="5.0" arcWidth="5.0" fill="#141618" height="18.0" layoutX="1013.0" layoutY="297.0" stroke="BLACK" strokeType="INSIDE" width="48.0" />
       <Rectangle fx:id="stop2" arcHeight="5.0" arcWidth="5.0" fill="#141618" height="18.0" layoutX="1012.0" layoutY="362.0" stroke="BLACK" strokeType="INSIDE" width="48.0" />
       <Rectangle fx:id="stop3" arcHeight="5.0" arcWidth="5.0" fill="#141618" height="40.0" layoutX="1063.0" layoutY="317.0" stroke="BLACK" strokeType="INSIDE" width="18.0" />
@@ -262,7 +262,7 @@
             <Font name="Arial" size="16.0" />
          </font>
       </Label>
-      <Label fx:id="speedUIValue" layoutX="882.0" layoutY="633.0" text="100" textFill="WHITE">
+      <Label fx:id="speedUIValue" layoutX="882.0" layoutY="633.0" text="0.0" textFill="WHITE">
          <font>
             <Font name="Arial" size="16.0" />
          </font>
@@ -282,5 +282,15 @@
       <Circle fx:id="human_4" fill="#d61fff" layoutX="872.0" layoutY="374.0" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
        <Circle fx:id="car2" fill="#4bff1f" layoutX="1212.0" layoutY="515.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle fx:id="car" fill="#ff1f1f" layoutX="27.0" layoutY="160.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
+      <Label layoutX="996.0" layoutY="664.0" text="/4000" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="933.0" layoutY="633.0" text="Pixel/Sec" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="16.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

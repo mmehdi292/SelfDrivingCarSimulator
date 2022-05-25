@@ -377,9 +377,11 @@ public class Plan {
 
     public  static  void checkHumans(MapController context, Circle vcar){
         Walkway walkway = Check.checkingWalkways(context,vcar);
-        while (walkway !=null){
+        Boolean loop = (walkway !=null);
+        while (loop){
+            System.out.print("");
             if(!walkway.getOccupied()){
-                walkway=null;
+                loop=false;
             }
         }
     }

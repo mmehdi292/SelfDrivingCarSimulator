@@ -118,6 +118,11 @@ public class BDI extends Thread {
             return "CAR_FOUND";
         }
 
+        Walkway walkway = Check.checkingWalkways(context,physical);
+        if(walkway !=null && walkway.getOccupied()){
+            return "WALKWAY";
+        }
+
         Rectangle obstacle = Check.checkingObstacle(context,vcar);
         if(obstacle != null) {
             // for add obstacle to his list
@@ -156,10 +161,7 @@ public class BDI extends Thread {
             }
         }
 
-        Walkway walkway = Check.checkingWalkways(context,vcar);
-        if(walkway !=null){
-            return "WALKWAY";
-        }
+
 
 
 
@@ -237,8 +239,14 @@ public class BDI extends Thread {
         List list = Collections.synchronizedList(planPath);
         synchronized (list) {
             Iterator i = list.iterator(); // Must be in synchronized block
-            while (i.hasNext())
-                Movement.goToPoint(this,(Point) i.next());
+            while (i.hasNext()){
+                try{
+                    Movement.goToPoint(this,(Point) i.next());
+                }
+                catch (Exception e){
+                    Plan.addPointToList(context,physical,planPath,desires);
+                }
+            }
         }
         planPath.clear();
 

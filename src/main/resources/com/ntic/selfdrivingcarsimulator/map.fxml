@@ -273,9 +273,9 @@
          </font>
       </Label>
       <Rectangle fx:id="walkway_2" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="52.0" layoutX="547.0" layoutY="313.0" stroke="BLACK" strokeType="INSIDE" width="43.0" />
-      <Rectangle fx:id="walkway_1" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="52.0" layoutX="531.0" layoutY="133.0" stroke="BLACK" strokeType="INSIDE" width="43.0" />
+      <Rectangle fx:id="walkway_3" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="52.0" layoutX="531.0" layoutY="133.0" stroke="BLACK" strokeType="INSIDE" width="43.0" />
       <Rectangle fx:id="walkway_4" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="52.0" layoutX="850.0" layoutY="313.0" stroke="BLACK" strokeType="INSIDE" width="43.0" />
-      <Rectangle fx:id="walkway_3" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="52.0" layoutX="438.0" layoutY="491.0" stroke="BLACK" strokeType="INSIDE" width="43.0" />
+      <Rectangle fx:id="walkway_1" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="52.0" layoutX="438.0" layoutY="491.0" stroke="BLACK" strokeType="INSIDE" width="43.0" />
       <Circle fx:id="human_1" fill="#d61fff" layoutX="460.0" layoutY="558.0" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle fx:id="human_2" fill="#d61fff" layoutX="567.0" layoutY="378.0" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle fx:id="human_3" fill="#d61fff" layoutX="553.0" layoutY="195.0" radius="7.0" stroke="BLACK" strokeType="INSIDE" />

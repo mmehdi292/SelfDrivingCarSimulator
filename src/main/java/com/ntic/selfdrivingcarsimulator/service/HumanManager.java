@@ -4,6 +4,7 @@ import com.ntic.selfdrivingcarsimulator.config.Constants;
 import com.ntic.selfdrivingcarsimulator.controller.MapController;
 import com.ntic.selfdrivingcarsimulator.model.Walkway;
 import javafx.application.Platform;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 
@@ -53,6 +54,7 @@ public class HumanManager  extends Thread {
 
             if(walkway!=null){
                 walkway.setOccupied(true);
+                walkway.getWalkwayUI().setFill(Color.RED);
             }
 
 
@@ -66,6 +68,8 @@ public class HumanManager  extends Thread {
 
             if(pixels==80){
                 walkway.setOccupied(false);
+
+                walkway.getWalkwayUI().setFill(Color.WHITE);
             }
 
 

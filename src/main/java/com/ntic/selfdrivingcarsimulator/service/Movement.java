@@ -182,66 +182,72 @@ public class Movement {
     }
 
 
-    public static String moveXThanY(Circle physical,Circle vcar,Point point){
-        if(physical.getLayoutX()!=point.getX()) {
-            vcar.setLayoutY(physical.getLayoutY());
-            if(physical.getLayoutX()>point.getX()) {
-                Transformation.updateScreenInX(physical,-1);
+    public static String moveXThanY(BDI agent,Circle vcar,Point point){
+        if(agent.getPhysical().getLayoutX()!=point.getX()) {
+            vcar.setLayoutY(agent.getPhysical().getLayoutY());
+            if(agent.getPhysical().getLayoutX()>point.getX()) {
+                Transformation.updateScreenInX(agent.getPhysical(),-1);
                 Transformation.updateScreenInX(vcar,-Constants.VCAR_DETETION);
-
+                agent.setDirection("LEFT");
                 return "LEFT";
             }
             else {
-                Transformation.updateScreenInX(physical,1);
+                Transformation.updateScreenInX(agent.getPhysical(),1);
                 Transformation.updateScreenInX(vcar,Constants.VCAR_DETETION);
+                agent.setDirection("RIGHT");
                 return "RIGHT";
             }
 
         }else{
-            vcar.setLayoutX(physical.getLayoutX());
-            if(physical.getLayoutY()!=point.getY()) {
-                if(physical.getLayoutY()>point.getY()) {
-                    Transformation.updateScreenInY(physical,-1);
+            vcar.setLayoutX(agent.getPhysical().getLayoutX());
+            if(agent.getPhysical().getLayoutY()!=point.getY()) {
+                if(agent.getPhysical().getLayoutY()>point.getY()) {
+                    Transformation.updateScreenInY(agent.getPhysical(),-1);
                     Transformation.updateScreenInY(vcar,-Constants.VCAR_DETETION);
+                    agent.setDirection("TOP");
                     return "TOP";
                 }
                 else {
-                    Transformation.updateScreenInY(physical,1);
+                    Transformation.updateScreenInY(agent.getPhysical(),1);
                     Transformation.updateScreenInY(vcar,Constants.VCAR_DETETION);
+                    agent.setDirection("BOTTOM");
                     return "BOTTOM";
                 }
             }
         }
         return null;
     }
-    public static String moveYThanX(Circle physical,Circle vcar,Point point){
+    public static String moveYThanX(BDI agent,Circle vcar,Point point){
 
-        //I'AM not sure about retrun cases [NOW]
-        if(physical.getLayoutY()!=point.getY()) {
-            vcar.setLayoutX(physical.getLayoutX());
-            if(physical.getLayoutY()>point.getY()) {
-                Transformation.updateScreenInY(physical,-1);
+        if(agent.getPhysical().getLayoutY()!=point.getY()) {
+            vcar.setLayoutX(agent.getPhysical().getLayoutX());
+            if(agent.getPhysical().getLayoutY()>point.getY()) {
+                Transformation.updateScreenInY(agent.getPhysical(),-1);
                 Transformation.updateScreenInY(vcar,-Constants.VCAR_DETETION);
-                return "LEFT";
+                agent.setDirection("TOP");
+                return "TOP";
             }
             else {
-                Transformation.updateScreenInY(physical,1);
+                Transformation.updateScreenInY(agent.getPhysical(),1);
                 Transformation.updateScreenInY(vcar,Constants.VCAR_DETETION);
-                return "RIGHT";
+                agent.setDirection("BOTTOM");
+                return "BOTTOM";
             }
 
         }else{
-            vcar.setLayoutY(physical.getLayoutY());
-            if(physical.getLayoutX()!=point.getX()) {
-                if(physical.getLayoutX()>point.getX()) {
-                    Transformation.updateScreenInX(physical,-1);
+            vcar.setLayoutY(agent.getPhysical().getLayoutY());
+            if(agent.getPhysical().getLayoutX()!=point.getX()) {
+                if(agent.getPhysical().getLayoutX()>point.getX()) {
+                    Transformation.updateScreenInX(agent.getPhysical(),-1);
                     Transformation.updateScreenInX(vcar,-Constants.VCAR_DETETION);
-                    return "TOP";
+                    agent.setDirection("LEFT");
+                    return "LEFT";
                 }
                 else {
-                    Transformation.updateScreenInX(physical,1);
+                    Transformation.updateScreenInX(agent.getPhysical(),1);
                     Transformation.updateScreenInX(vcar,Constants.VCAR_DETETION);
-                    return "BOTTOM";
+                    agent.setDirection("RIGHT");
+                    return "RIGHT";
                 }
             }
         }
@@ -254,10 +260,10 @@ public class Movement {
         while (agent.getPhysical().getLayoutX()!=point.getX() || agent.getPhysical().getLayoutY()!=point.getY() ){
 
             if(agent.getStartMoveValue()){
-                Movement.moveXThanY(agent.getPhysical(),vcar,point);
+                Movement.moveXThanY(agent,vcar,point);
             }
             else{
-                Movement.moveYThanX(agent.getPhysical(),vcar,point);
+                Movement.moveYThanX(agent,vcar,point);
             }
 
             agent.petrolTank-=1;

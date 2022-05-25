@@ -230,9 +230,9 @@
       <Rectangle fx:id="passage9" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="10.0" layoutX="1017.0" layoutY="481.0" stroke="BLACK" strokeType="INSIDE" width="43.0" />
       <Circle fx:id="feux11" fill="DODGERBLUE" layoutX="1067.0" layoutY="546.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
       <Rectangle fx:id="passage11" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="10.0" layoutX="1016.0" layoutY="541.0" stroke="BLACK" strokeType="INSIDE" width="43.0" />
-      <Rectangle fx:id="plaque_50" arcHeight="5.0" arcWidth="5.0" fill="#b49db3" height="40.0" layoutX="362.0" layoutY="317.0" stroke="BLACK" strokeType="INSIDE" width="124.0" />
+      <Rectangle fx:id="plaque_50" arcHeight="5.0" arcWidth="5.0" fill="#b49db3" height="96.0" layoutX="313.0" layoutY="368.0" stroke="BLACK" strokeType="INSIDE" width="41.0" />
       <Rectangle fx:id="plaque1_30" arcHeight="5.0" arcWidth="5.0" fill="#b49db3" height="85.0" layoutX="1016.0" layoutY="197.0" stroke="BLACK" strokeType="INSIDE" width="43.0" />
-      <Rectangle fx:id="plaque2_30" arcHeight="5.0" arcWidth="5.0" fill="#b49db3" height="40.0" layoutX="719.0" layoutY="140.0" stroke="BLACK" strokeType="INSIDE" width="124.0" />
+      <Rectangle fx:id="plaque2_30" arcHeight="5.0" arcWidth="5.0" fill="#b49db3" height="85.0" layoutX="663.0" layoutY="190.0" stroke="BLACK" strokeType="INSIDE" width="41.0" />
       <Label layoutX="721.0" layoutY="186.0" text="30" />
       <Label layoutX="828.0" layoutY="120.0" text="30" />
       <Label layoutX="366.0" layoutY="365.0" text="50" />
@@ -272,16 +272,16 @@
             <Font name="Arial" size="16.0" />
          </font>
       </Label>
-      <Rectangle fx:id="walkway_2" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="52.0" layoutX="547.0" layoutY="313.0" stroke="BLACK" strokeType="INSIDE" width="43.0" />
-      <Rectangle fx:id="walkway_3" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="52.0" layoutX="531.0" layoutY="133.0" stroke="BLACK" strokeType="INSIDE" width="43.0" />
-      <Rectangle fx:id="walkway_4" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="52.0" layoutX="850.0" layoutY="313.0" stroke="BLACK" strokeType="INSIDE" width="43.0" />
-      <Rectangle fx:id="walkway_1" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="52.0" layoutX="438.0" layoutY="491.0" stroke="BLACK" strokeType="INSIDE" width="43.0" />
+      <Rectangle fx:id="walkway_2" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="52.0" layoutX="554.0" layoutY="313.0" stroke="BLACK" strokeType="INSIDE" width="25.0" />
+      <Rectangle fx:id="walkway_3" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="52.0" layoutX="540.0" layoutY="133.0" stroke="BLACK" strokeType="INSIDE" width="25.0" />
+      <Rectangle fx:id="walkway_4" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="52.0" layoutX="859.0" layoutY="313.0" stroke="BLACK" strokeType="INSIDE" width="25.0" />
+      <Rectangle fx:id="walkway_1" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="52.0" layoutX="447.0" layoutY="491.0" stroke="BLACK" strokeType="INSIDE" width="25.0" />
       <Circle fx:id="human_1" fill="#d61fff" layoutX="460.0" layoutY="558.0" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle fx:id="human_2" fill="#d61fff" layoutX="567.0" layoutY="378.0" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle fx:id="human_3" fill="#d61fff" layoutX="553.0" layoutY="195.0" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle fx:id="human_4" fill="#d61fff" layoutX="872.0" layoutY="374.0" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
-       <Circle fx:id="car2" fill="#4bff1f" layoutX="1212.0" layoutY="515.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="car" fill="#ff1f1f" layoutX="27.0" layoutY="160.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
+       <Circle fx:id="car2" fill="#4bff1f" layoutX="1212.0" layoutY="515.0" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="car" fill="#ff1f1f" layoutX="27.0" layoutY="160.0" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
       <Label layoutX="996.0" layoutY="664.0" text="/4000" textFill="WHITE">
          <font>
             <Font name="Arial" size="16.0" />

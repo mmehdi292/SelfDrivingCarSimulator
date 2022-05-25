@@ -29,6 +29,7 @@ public class BDI extends Thread {
     private Boolean directionToFuelStation;
     private Point fuelStation;
     private Boolean forGenerateDesiredAuto;
+    private String direction;
 
     public BDI(Circle physical,MapController context){
         this.physical=physical;
@@ -379,5 +380,13 @@ public class BDI extends Thread {
 
     public void setForGenerateDesiredAuto(Boolean forGenerateDesiredAuto) {
         this.forGenerateDesiredAuto = forGenerateDesiredAuto;
+    }
+
+    public String getDirection() {
+        return direction;
+    }
+
+    public void setDirection(String direction) {
+        this.direction = direction;
     }
 }

@@ -388,15 +388,36 @@ public class Plan {
 
     public static  void restRight(BDI agent){
         Boolean isInCollision = false;
+        Boolean isAgent = false;
         if(agent==agent.getContext().agent){
             isInCollision = agent.getContext().checkCollision(agent.getPhysical(),agent.getContext().agentNotSelected.getPhysical());
+            isAgent = true;
         }
         else if(agent == agent.getContext().agentNotSelected){
             isInCollision = agent.getContext().checkCollision(agent.getPhysical(),agent.getContext().agent.getPhysical());
+            isAgent = false;
         }
 
         if(isInCollision){
-            System.out.println("Hi");
+            switch (agent.getDirection()){
+                case "TOP":
+                    agent.getPhysical().setLayoutX(agent.getPhysical().getLayoutX()+10);
+                    agent.setStartMoveValue(false);
+
+                break;
+                case "BOTTOM":
+                    agent.getPhysical().setLayoutX(agent.getPhysical().getLayoutX()-10);
+                    agent.setStartMoveValue(false);
+                    break;
+                case "LEFT":
+                        agent.getPhysical().setLayoutY(agent.getPhysical().getLayoutY()+10);
+                    agent.setStartMoveValue(true);
+                    break;
+                case "RIGHT":
+                    agent.getPhysical().setLayoutY(agent.getPhysical().getLayoutY()-10);
+                    agent.setStartMoveValue(true);
+                    break;
+            }
         }
     }
 

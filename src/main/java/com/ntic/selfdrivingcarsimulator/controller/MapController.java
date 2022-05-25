@@ -515,23 +515,23 @@ public class MapController {
     public void changeCarDesire(String place){
         Circle desire;
         switch(place){
-            case "Poste":desire = poste; break;
+            case "Bank":desire = poste; break;
             case "Commune": desire = commune; break;
-            case "Stade": desire = stade; break;
-            case "Hopital": desire = hopital; break;
-            case "Universite": desire = universite; break;
-            case "Police": desire = police; break;
-            case "Marche": desire = marche; break;
-            case "Salle de sport": desire = salleSport; break;
-            case "Pomme d'esense A": desire = pommeA; break;
-            case "Pomme d'esense B": desire = pommeB; break;
-            case "Pomme d'esense C": desire = pommeC; break;
-            case "Pomme d'esense D": desire = pommeD; break;
+            case "Stadium": desire = stade; break;
+            case "Hospital": desire = hopital; break;
+            case "University": desire = universite; break;
+            case "POLICE": desire = police; break;
+            case "Market": desire = marche; break;
+            case "Sports Hall": desire = salleSport; break;
+            case "Fuel Pump A": desire = pommeA; break;
+            case "Fuel Pump B": desire = pommeB; break;
+            case "Fuel Pump C": desire = pommeC; break;
+            case "Fuel Pump D": desire = pommeD; break;
             case "Masjed": desire = masjed; break;
             case "Mall": desire = mall; break;
-            case "Protiction Civil": desire = protictionCivil; break;
+            case "Fire Station": desire = protictionCivil; break;
             case "SNTV": desire = sntv; break;
-            case "Aeroport":desire = aeroport; break;
+            case "Airport":desire = aeroport; break;
             //for error only
             default:desire = null;
         }

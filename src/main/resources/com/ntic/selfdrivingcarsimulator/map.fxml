@@ -61,43 +61,43 @@
       <Rectangle fx:id="zone10" arcHeight="5.0" arcWidth="5.0" fill="#25bc70" height="139.0" layoutX="351.0" layoutY="357.0" stroke="BLACK" strokeType="INSIDE" width="314.0" />
       <Rectangle fx:id="zone11" arcHeight="5.0" arcWidth="5.0" fill="#25bc70" height="139.0" layoutX="702.0" layoutY="357.0" stroke="BLACK" strokeType="INSIDE" width="314.0" />
       <Rectangle fx:id="zone12" arcHeight="5.0" arcWidth="5.0" fill="#25bc70" height="139.0" layoutX="1058.0" layoutY="357.0" stroke="BLACK" strokeType="INSIDE" width="223.0" />
-      <Rectangle fx:id="zone13" arcHeight="5.0" arcWidth="5.0" fill="#25bc70" height="89.0" layoutY="537.0" stroke="BLACK" strokeType="INSIDE" width="314.0" />
+      <Rectangle fx:id="zone13" arcHeight="5.0" arcWidth="5.0" fill="#25bc70" height="85.0" layoutY="537.0" stroke="BLACK" strokeType="INSIDE" width="314.0" />
       <Rectangle fx:id="zone14" arcHeight="5.0" arcWidth="5.0" fill="#25bc70" height="88.0" layoutX="351.0" layoutY="537.0" stroke="BLACK" strokeType="INSIDE" width="314.0" />
       <Rectangle fx:id="zone15" arcHeight="5.0" arcWidth="5.0" fill="#25bc70" height="87.0" layoutX="702.0" layoutY="537.0" stroke="BLACK" strokeType="INSIDE" width="314.0" />
       <Rectangle fx:id="zone16" arcHeight="5.0" arcWidth="5.0" fill="#25bc70" height="85.0" layoutX="1058.0" layoutY="537.0" stroke="BLACK" strokeType="INSIDE" width="224.0" />
-      <HBox alignment="CENTER" layoutX="-1.0" layoutY="621.0" prefHeight="101.0" prefWidth="1114.0" spacing="10.0" style="-fx-background-color: white;">
+      <HBox alignment="CENTER" layoutX="266.0" layoutY="621.0" prefHeight="102.0" prefWidth="848.0" spacing="10.0" style="-fx-background-color: Black;">
          <children>
-            <ComboBox fx:id="placesComboBox" onAction="#loadPlace" prefHeight="42.0" prefWidth="176.0" promptText="Select Place">
+            <ComboBox fx:id="placesComboBox" onAction="#loadPlace" prefHeight="36.0" prefWidth="176.0" promptText="Select Place" style="-fx-background-color: #fff;">
                <items>
                   <FXCollections fx:factory="observableArrayList">
-                     <String fx:value="Poste" />
+                     <String fx:value="Bank" />
                      <String fx:value="Commune" />
-                     <String fx:value="Stade" />
-                     <String fx:value="Hopital" />
-                     <String fx:value="Universite" />
-                     <String fx:value="Police" />
-                     <String fx:value="Marche" />
-                     <String fx:value="Salle de sport" />
-                     <String fx:value="Pomme d'esense A" />
-                     <String fx:value="Pomme d'esense C" />
-                     <String fx:value="Pomme d'esense B" />
-                     <String fx:value="Pomme d'esense D" />
+                     <String fx:value="Stadium" />
+                     <String fx:value="Hospital" />
+                     <String fx:value="University" />
+                     <String fx:value="POLICE" />
+                     <String fx:value="Market" />
+                     <String fx:value="Sports Hall" />
+                     <String fx:value="Fuel Pump A" />
+                     <String fx:value="Fuel Pump B" />
+                     <String fx:value="Fuel Pump C" />
+                     <String fx:value="Fuel Pump D" />
                      <String fx:value="Masjed" />
                      <String fx:value="Mall" />
-                     <String fx:value="Protiction Civil" />
+                     <String fx:value="Fire Station" />
                      <String fx:value="SNTV" />
-                     <String fx:value="Aeroport" />
+                     <String fx:value="Airport" />
                   </FXCollections>
                </items>
             </ComboBox>
-            <Button fx:id="start" alignment="CENTER" mnemonicParsing="false" onAction="#startCar" text="Start">
+            <Button fx:id="start" alignment="CENTER" mnemonicParsing="false" onAction="#startCar" style="-fx-background-color: #25bc70;" text="Start" textFill="WHITE">
                <font>
-                  <Font size="17.0" />
+                  <Font name="Arial Bold" size="18.0" />
                </font>
             </Button>
-            <Button fx:id="addObstacle" mnemonicParsing="false" onAction="#CreateObstacle" text="Create Obstacle">
+            <Button fx:id="addObstacle" mnemonicParsing="false" onAction="#CreateObstacle" style="-fx-background-color: f71e1e;" text="Create Obstacle" textFill="WHITE">
                <font>
-                  <Font size="17.0" />
+                  <Font name="Arial Bold" size="18.0" />
                </font>
             </Button>
          </children>
@@ -390,7 +390,7 @@
             <Image url="@images/bank.png" />
          </image>
       </ImageView>
-      <Label layoutX="1185.0" layoutY="121.0" text="Poste">
+      <Label layoutX="1185.0" layoutY="121.0" text="Bank">
          <font>
             <Font name="Arial Bold" size="13.0" />
          </font>
@@ -467,5 +467,30 @@
          </image>
       </ImageView>
       <Circle fx:id="car" fill="#ff1f1f" layoutX="27.0" layoutY="160.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#1f994c" layoutX="14.0" layoutY="663.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#fffb21" layoutX="14.0" layoutY="687.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#c72dc9" layoutX="14.0" layoutY="710.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#f71e1e" layoutX="14.0" layoutY="639.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
+      <Label layoutX="35.0" layoutY="633.0" text="Your Car" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="33.0" layoutY="656.0" text="Self driving car" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="33.0" layoutY="679.0" text="Position of places" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="33.0" layoutY="702.0" text="Humans" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="12.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#25bc70" height="4.0" layoutX="2.0" layoutY="617.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1276.0" />
    </children>
 </AnchorPane>

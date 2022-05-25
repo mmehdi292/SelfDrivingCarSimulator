@@ -54,7 +54,6 @@ public class HumanManager  extends Thread {
 
             if(walkway!=null){
                 walkway.setOccupied(true);
-                walkway.getWalkwayUI().setFill(Color.RED);
             }
 
 
@@ -69,7 +68,6 @@ public class HumanManager  extends Thread {
             if(pixels==80){
                 walkway.setOccupied(false);
 
-                walkway.getWalkwayUI().setFill(Color.WHITE);
             }
 
 

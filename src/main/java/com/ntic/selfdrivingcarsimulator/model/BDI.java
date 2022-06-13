@@ -2,7 +2,9 @@ package com.ntic.selfdrivingcarsimulator.model;
 
 import com.ntic.selfdrivingcarsimulator.controller.MapController;
 import com.ntic.selfdrivingcarsimulator.config.Constants;
+import com.ntic.selfdrivingcarsimulator.plan.*;
 import com.ntic.selfdrivingcarsimulator.service.*;
+import com.ntic.selfdrivingcarsimulator.service.MainPlan;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 
@@ -13,6 +15,8 @@ public class BDI extends Thread {
     private Circle physical;
     private MapController context;
     private LinkedList<Rectangle> commonObstacles;
+
+    String observation;
 
     private Point desires;
     private ArrayList<Point> planPath;
@@ -46,6 +50,7 @@ public class BDI extends Thread {
         this.sensor.start();
         this.stopSensor.start();
         this.forGenerateDesiredAuto=false;
+        this.observation = "Empty";
     }
 
     //for make an agent can generate his desired automatically and randomly
@@ -61,7 +66,6 @@ public class BDI extends Thread {
         desiredChanger.start();
     }
 
-    //don't forget it
     public synchronized Circle vcarInit(){
 
         Circle vcar = new Circle();
@@ -176,20 +180,20 @@ public class BDI extends Thread {
 
     public void genererLesButs(){
         // in pathPlan
-        Plan.addPointToList(context,physical,planPath,desires);
+        MainPlan.addPointToList(context,physical,planPath,desires);
     }
 
     public void deliberation(String observation){
 
         Circle vcar = this.physical;
         switch(observation){
-            case "Obstacle":Plan.changePlan(this,vcar); break;
-            case "RED_LIGHT":Plan.waitChangingColor(context,vcarInit(),sensor);break;
-            case "PLAQUE":Plan.changeSpeed(this,vcar);break;
-            case "STOP":Plan.stopAndCheckRightPlan(this,vcar);break;
-            case "WALKWAY": Plan.checkHumans(this.getContext(),vcar); break;
-            case "FUEL_STATION":Plan.goToFuelStationPlan(this);break;
-            case "CAR_FOUND":Plan.restRight(this);break;
+            case "Obstacle":ObstacleFoundPlan obstacleFoundPlan = new ObstacleFoundPlan(this,vcar); obstacleFoundPlan.setCondition(true);  break;
+            case "RED_LIGHT": RedLightFoundPlan redLightFoundPlan = new RedLightFoundPlan(context,vcarInit(),sensor); redLightFoundPlan.setCondition(true); break;
+            case "PLAQUE": PlaqueSpeedFoundPlan plaqueSpeedFoundPlan = new PlaqueSpeedFoundPlan(this,vcar); plaqueSpeedFoundPlan.setCondition(true); break;
+            case "STOP":StopFoundPlan stopFoundPlan = new StopFoundPlan(this,vcar); stopFoundPlan.setCondition(true);break;
+            case "WALKWAY": WalkwayFoundPlan walkwayFoundPlan = new WalkwayFoundPlan(this,context,vcar); walkwayFoundPlan.setCondition(true); break;
+            case "FUEL_STATION":FuelStationPlan fuelStationPlan = new FuelStationPlan(this); fuelStationPlan.setCondition(true); break;
+            case "CAR_FOUND": CarFoundPlan carFoundPlan = new CarFoundPlan(this); carFoundPlan.setCondition(true); break;
         }
     }
 
@@ -209,7 +213,7 @@ public class BDI extends Thread {
                 if(!forGenerateDesiredAuto)
                     Message.UIPetrolThread(getContext(),petrolTank);
             }
-            Plan.addPointToList(this.getContext(), this.getPhysical(),this.getPlanPath(),this.getDesires());
+            MainPlan.addPointToList(this.getContext(), this.getPhysical(),this.getPlanPath(),this.getDesires());
             doMove();
         }
         else{
@@ -226,7 +230,7 @@ public class BDI extends Thread {
             System.out.print("");
             if(hasNewDesires){
                 genererLesButs();
-                String observation = observation();
+                observation = observation();
                 deliberation(observation);
                 realiserLesIntentions();
                 hasNewDesires = false;
@@ -245,7 +249,7 @@ public class BDI extends Thread {
                     Movement.goToPoint(this,(Point) i.next());
                 }
                 catch (Exception e){
-                    Plan.addPointToList(context,physical,planPath,desires);
+                    MainPlan.addPointToList(context,physical,planPath,desires);
                 }
             }
         }
@@ -389,4 +393,5 @@ public class BDI extends Thread {
     public void setDirection(String direction) {
         this.direction = direction;
     }
+
 }

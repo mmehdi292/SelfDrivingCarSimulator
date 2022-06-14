@@ -2,7 +2,7 @@ package com.ntic.selfdrivingcarsimulator.plan;
 
 import com.ntic.selfdrivingcarsimulator.model.BDI;
 import com.ntic.selfdrivingcarsimulator.model.Point;
-import com.ntic.selfdrivingcarsimulator.service.MainPlan;
+import com.ntic.selfdrivingcarsimulator.service.BasisAlgorithm;
 import com.ntic.selfdrivingcarsimulator.service.Message;
 import com.ntic.selfdrivingcarsimulator.service.Movement;
 import javafx.scene.shape.Circle;
@@ -66,7 +66,7 @@ public class ObstacleFoundPlan extends Plan{
                 Movement.goToPoint(agent,nextPoint);
                 agent.getPlanPath().clear();
                 // create new plan
-                agent.setNewPointOfEviteObstacle(MainPlan.createNewPlan(agent,obstaclePositionReverseValue));
+                agent.setNewPointOfEviteObstacle(BasisAlgorithm.createNewPlan(agent,obstaclePositionReverseValue));
                 Movement.goToPoint(agent,agent.getNewPointOfEviteObstacle());
                 Movement.goToPoint(agent,point2);
                 Movement.goToPoint(agent,agent.getDesires());

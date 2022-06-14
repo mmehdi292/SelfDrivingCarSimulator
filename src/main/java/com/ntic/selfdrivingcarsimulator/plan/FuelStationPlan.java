@@ -3,7 +3,7 @@ package com.ntic.selfdrivingcarsimulator.plan;
 import com.ntic.selfdrivingcarsimulator.config.Constants;
 import com.ntic.selfdrivingcarsimulator.model.BDI;
 import com.ntic.selfdrivingcarsimulator.model.Point;
-import com.ntic.selfdrivingcarsimulator.service.MainPlan;
+import com.ntic.selfdrivingcarsimulator.service.BasisAlgorithm;
 import javafx.scene.shape.Circle;
 
 import java.util.ArrayList;
@@ -43,7 +43,7 @@ public class FuelStationPlan extends Plan {
             }
             if(agent.getFuelStation()!=null){
                 agent.setDirectionToFuelStation(true);
-                MainPlan.addPointToList(agent.getContext(), agent.getPhysical(),agent.getPlanPath(),agent.getFuelStation());
+                BasisAlgorithm.addPointToList(agent.getContext(), agent.getPhysical(),agent.getPlanPath(),agent.getFuelStation());
 
             }
         }

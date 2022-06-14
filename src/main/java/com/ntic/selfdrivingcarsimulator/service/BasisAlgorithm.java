@@ -8,7 +8,7 @@ import javafx.scene.shape.Circle;
 
 import java.util.ArrayList;
 
-public class MainPlan {
+public class BasisAlgorithm {
 
     public static void addPointToList(MapController context,Circle physical, ArrayList<Point> planPath,Point desires){
 

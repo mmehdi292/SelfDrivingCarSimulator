@@ -385,6 +385,7 @@ public class MapController {
     public ArrayList<Walkway> listWalkways;
 
 
+
     @FXML
     public void initialize() {
         this.agent = new BDI(car,this);
